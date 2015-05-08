@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Memos about vim</title>
+<meta name="keywords" content="vim, Vim" />
+<meta name="robots" content="index,follow" />
+<meta name="description" content="vimについてのお役立ちメモを残してあります。" />
+<meta name="Copyright" content="design now" />
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<meta http-equiv="Content-Language" content="ja" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link href="share/css/set/import.css" rel="stylesheet" type="text/css" media="all" />
+<link href="share/css/share.css" rel="stylesheet" type="text/css" media="all" />
+<link href="sample/css/index.css" rel="stylesheet" type="text/css" media="all" />
+<script type='text/javascript' src='share/js/jquery.js'></script>
+<script type='text/javascript' src='share/js/scroll.js'></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script>
+$(function(){
+    var side = $("#leftContents");
+    var main = $("#mainContents");
+    var min_move = main.offset().top-190;
+    var max_move = main.offset().top + main.height() - side.height() - 2*parseInt(side.css("top") );
+					 
+    $(window).bind("scroll", function() {
+	    var wst =  $(window).scrollTop();
+        if( wst > min_move ){
+	        var margin_top = wst - min_move ;
+            side.animate({"margin-top": margin_top},{duration:400,queue:false});
+        }else if( wst < min_move ){
+            side.animate({"margin-top":0},{duration:400,queue:false});
+        }
+    });    
+});
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header" class="clearfix">
+			<h1>Daigo OUE homepage</h1>
+			<div id="welcome">
+			<img src="share/img/welcome_logo.png" width="166" height="78">
+			</div>
+			<ul id="gNavi" class="clearfix">
+				<li class="firstItem"><a href="links.html" title="">LINKS</a></li>
+				<li><a href="memo.html" title="">MEMO</a></li>
+				<li><a href="works.html" title="">WORKS</a></li>
+				<li><a href="profile.html" title="">PROFILE</a></li>
+				<li class="lastItem"><a href="index.html" title="">TOP PAGE</a></li>
+			</ul><!-- ul#gNavi END -->
+		</div><!-- div#header END -->
+		<div id="wrapBg">
+			<div class="wrapBox clearfix">
+				<div id="mainContents">
+					<a id="pageLink01" name="pageLink01"></a>	
+					<p class="chapter7">MEMO</p>
+					<p class="chapter4">about vim</p>
+					<div class="txtTempSet txtTemp1">
+						<strong>Vimを始めよう！</strong> 
+							<span>
+								最近カッコつけてVimを使い始めたのですが、素晴らしく使いやすいですねこれ。コマンド覚えるのに初めは苦労するかもしれないけれども、使ってるうちにだんだん覚えてきます。コマンドを覚えれば普通テキストエディタで行うよりもはるかに早い編集ができるようになるでしょう。「WordよりLaTeXだ！」っていうのと似ています。<br/>
+								<div class="bottomspace45"></div>
+								というわけでこれからはVimについてのメモも増えていくことになりそうです。<br/>
+								今回はVimを始めよう！ということでVimの基本操作を記しておきます。vimはTerminal上で動かすことができます。まずはexample.htmlというファイルを作るという設定でvimを起動しましょう。次のようにするとvimが起動します
+								<pre style="color:#696"><code>
+vim example.html
+								</code></pre>
+								今の状態はノーマルモードと言ってコマンドを入力して捜査するモードです。だから、このままでは文字を入力することはできません。"<code>a</code>"か"<code>i</code>"を押すことでINSERTモードになり普通に文字を打ち込むことができるようになります。<br/>
+								編集が終了したら、<code>esc</code>ボタンを押してノーマルモードに戻りましょう。ファイルを保存するためには<code>:w</code>と入力します。基本的にコマンドを入力するためには、まず<code>:</code>を入力する必要があります。そして今回つかった<code>w</code>はファイルを保存するコマンドになります。保存を終えて、vimを終了するためには<code>:q</code>と入力します。<br/>
+								<div class="bottomspace45"></div>
+								これで一応文字をテキストとして入力することはできるようになりましたが、このままではノーマルモードの存在意義が...ということになってしまうので、ノーマルモードではこんな便利なことができるよ！という例を幾つか紹介して終わりたいと思います。<br/>
+								<div class="bottomspace45"></div>
+								便利なコマンドその１"<code>dd</code>" : 現在の行のテキストを切り取ります。バックスペースを何度も押す必要がなくなります。<br/>
+								便利なコマンドその２"<code>「行きたい行」G</code>" : 例えば今100行目で、13行目に行くためには、<code>13G</code>と入力してあげればOKです。<br/>
+								便利なコマンドその３"<code>0</code>" : このコマンドでは現在カーソルがある行の頭にカーソルを持っていくことができます。<br/>
+								便利なコマンドその４"<code>$</code>" : このコマンドでは現在カーソルがある行の行の最後にカーソルを持っていくことができます。<br/>
+								<div class="bottomspace45"></div>
+								他にも便利なコマンドがたくさんありますが、必要に応じてググってみるといいと思います。全部コマンドを並べてみても長くなってしまうだけのなので、今回は幾つか紹介するだけにしました。他にも便利なコマンドがあったり、vim自体設定を弄ることができるので、メモとして残していきたいと思います。<br/>
+								<div class="bottomspace45"></div>
+								(2015.4.25.SAT)
+							</span>	
+					</div>
+				</div><!-- div#mainContents END -->
+				<div id="leftContents">
+					<ul id="subNavigation" class="bgList3">
+						<li><a href="#pageLink01" title="">Vimを始めよう！</a></li>
+					</ul>
+				</div><!-- div#leftContents END -->
+			</div><!-- div#wrapBox END -->
+		</div><!-- div#wrapBg END -->
+		<div id="footer">
+			<p id="copyright">Copyright (c) Daigo OUE All Rights Reserved.</p>
+		</div><!-- div#footer END -->
+	</div><!-- div#wrapper -->
+</body>
+</html>

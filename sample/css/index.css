@@ -1,0 +1,403 @@
+@charset "utf-8";
+            navBox.addClass("fixBox");
+
+/*-------------------------------------*/
+
+html, body{
+	background: #000;
+}
+
+div.wrapBox{
+	width: 960px;
+	margin: 0 auto;
+	
+	padding: 30px 0 ;
+}
+
+div#mainContents{
+	position: relative;
+	width: 700px;
+	min-height: 500px;
+	float: right;
+	margin-bottom: 90px;
+}
+
+div#leftContents{
+	margin-top:90px;
+	width: 200px;
+	height:600px;
+	top: 20px;
+	left: 20px;
+	float: left;
+	position:absolute;
+}
+
+ul#subNavigation{}
+
+ul#subNavigation li{
+	display: block;
+	margin-bottom: 14px;
+}
+
+
+.sTitle{
+	margin: 60px 0 20px;
+}
+
+.sTitleFirst{
+	margin: 0px 0 20px;
+}
+
+.fixBox{
+	position: fixed;
+	float:left;
+}
+
+/*-------------------------------------*/
+
+h3{
+	text-align: center;
+	margin: 90px 0;
+	color: #900;
+	border: 3px solid #900;
+	padding: 10px 0;
+}
+
+p{
+	margin-bottom: 15px;
+}
+
+
+/*-------------------------------------*/
+/* 見出し装飾 */
+/*-------------------------------------*/
+
+
+.chapter1{
+	padding-bottom: 4px;
+	border-bottom: 1px solid #ccc;
+	font-weight: bold;
+}
+
+.chapter2{
+	padding-bottom: 4px;
+	border-bottom: 3px solid #ccc;
+	font-weight: bold;
+}
+
+.chapter3{
+	padding-bottom: 4px;
+	border-bottom: 3px solid #333;
+	font-size: 14px;
+	font-weight: bold;
+}
+.chapter4{
+	padding-bottom: 4px;
+	border-bottom: 3px solid #333;
+	font-size: 16px;
+	font-weight: bold;
+}
+.chapter5{
+	padding: 6px 8px;
+	background: #efefef;
+	color: #111;
+	font-size: 14px;
+	font-weight: bold;
+}
+.chapter6{
+	padding: 6px 8px;
+	background: #ccc;
+	color: #111;
+	font-size: 14px;
+	font-weight: bold;
+}
+.chapter7{
+	padding: 6px 8px;
+	background: #666;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+.chapter8{
+	padding: 6px 8px;
+	background: #000;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.chapter9{
+	padding: 6px 8px;
+	background: #c00;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.chapter10{
+	padding: 6px 8px;
+	background: #900;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+.chapter11{
+	padding: 6px 8px;
+	background: #63C068;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.chapter12{
+	padding: 6px 8px;
+	background: #F5F6E4;
+	color: #333;
+	font-size: 14px;
+	font-weight: bold;
+}
+.chapter13{
+	padding: 6px 8px;
+	background: #F9EBF8;
+	color: #900;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.chapter14{
+	padding: 6px 8px;
+	background: #BEA581;
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.chapter15{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.chapter15_5{
+	font-size: 14px;
+	font-weight: bold;
+	color: #aad;
+	border-top: 1px dotted #88b;
+	padding-top: 15px;
+}
+
+.chapter15_5_first{
+	font-size: 14px;
+	font-weight: bold;
+	color: #aad
+
+}
+
+.chapter16{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.chapter17{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+/* 一部ブラウザ対象外 */
+.chapter18{
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border: 1px solid #ccc;
+	padding: 8px 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/* 一部ブラウザ対象外 */
+.chapter19{
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	background: #efefef;
+	padding: 8px 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/* 一部ブラウザ対象外 */
+.chapter20{
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	background: #333;
+	color: #fff;
+	border: 1px solid #dedede;
+	padding: 8px 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/*-------------------------------------*/
+/* テーブルフォーマット */
+/*-------------------------------------*/
+
+table{
+	border-top: 1px solid #ccc;
+	width: 100%;
+	margin-bottom: 30px;
+}
+table th,
+table td{
+	padding: 14px 0;
+	border-bottom: 1px solid #ccc;
+}
+table th{
+	padding-right: 16px;
+}
+table td{
+	border-left: 1px solid #ccc;
+	padding-left: 16px;
+}
+
+table.tableDec1 th{ background: #efefef; padding-left: 10px;}
+table.tableDec2 th{ background: #333; color: #fff; padding-left: 10px;}
+table.tableDec3 th{ background: #d5ceb1; color: #fff; padding-left: 10px; border-bottom: 1px solid #fff; color: #333;}
+
+/*-------------------------------------*/
+/* リストフォーマット */
+/*-------------------------------------*/
+
+ul{
+	display: block;
+	margin-bottom: 30px;
+}
+
+ul.Number{ list-style: decimal inside;}
+
+ul.imgList1{ list-style: circle inside;}
+ul.imgList2{ list-style: disc inside;}
+
+ul.bgList1 li{ background: url(../img/bg_list1.gif) no-repeat left center; padding-left: 1.5em;}
+ul.bgList2 li{ background: url(../img/bg_list2.gif) no-repeat left center; padding-left: 1.5em;}
+ul.bgList3 li{ background: url(../img/bg_list3_mod.png) no-repeat left center; padding-left: 1.5em;}
+ul.bgList4 li{ background: url(../img/bg_list4.gif) no-repeat left center; padding-left: 1.5em;}
+ul.bgList5 li{ background: url(../img/bg_list5.gif) no-repeat left center; padding-left: 1.5em;}
+
+ul.borderList1 li{ border-bottom: 1px solid #ccc; padding-bottom:0.3em; margin-bottom: 0.9em; display: block; }
+ul.borderList2 li{ border-bottom: 1px dotted #ccc; padding-bottom:0.3em; margin-bottom: 0.9em; display: block; }
+
+
+/*-------------------------------------*/
+/* テキストテンプレート */
+/*-------------------------------------*/
+
+
+/* 基本フォーマット */
+div.txtTempSet{
+	margin-bottom: 30px;
+}
+
+div.txtTempSet strong{
+	display: block;
+	font-weight: bold;
+}
+
+div#mainContents div.clearfix{
+	width: 100%;
+}
+
+/* txtTemp1 */
+div.txtTemp1{
+	border: 1px solid #fff;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-right: 8px;
+	padding-left: 8px;
+	margin-bottom: 10px;
+}
+div.txtTemp1 strong{
+	margin-bottom: 6px;
+	font-size: 15px;
+	color: #aad
+}
+div.txtTemp1 span{ color: #666;}
+
+/* txtTemp2 */
+div.txtTemp2{}
+div.txtTemp2 strong{ margin-bottom: 6px; font-size: 14px;}
+div.txtTemp2 span{ color: #666;}
+
+/* txtTemp3 */
+div.txtTemp3{}
+div.txtTemp3 strong{ margin-bottom: 6px; color: #900}
+div.txtTemp3 span{ color: #333;}
+
+/* txtTemp4 */
+div.txtTemp4{}
+div.txtTemp4 strong{ margin-bottom: 6px;}
+div.txtTemp4 span{ color: #666;}
+div.txtTemp4 p{ float: right; width: 194px;}
+
+/* txtTemp5 */
+div.txtTemp5{}
+div.txtTemp5 strong{ margin-bottom: 6px;}
+div.txtTemp5 span{ color: #666;}
+div.txtTemp5 p{ float: left; width: 194px;}
+
+/* txtTemp6 */
+div.txtTemp6{
+	border: 1px solid #fff;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-right: 8px;
+	padding-left: 8px;
+	margin-bottom: 10px;
+}
+div.txtTemp6 div.fL{ width: 350px;}
+div.txtTemp6 strong{
+	margin-bottom: 6px;
+	font-size: 15px;
+	color: #aad
+}
+div.txtTemp6 span{ color: #666;}
+div.txtTemp6 p{ float: right; width: 320px;}
+
+/* txtTemp7 */
+div.txtTemp7{}
+div.txtTemp7 div.fR{ width: 350px;}
+div.txtTemp7 strong{ margin-bottom: 6px;}
+div.txtTemp7 span{ color: #666;}
+div.txtTemp7 p{ float: left; width: 320px;}
+
+/* txtTemp8 */
+div.txtTemp8{
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-right: 8px;
+	padding-left: 8px;
+	margin-bottom: 10px;
+}
+div.txtTemp8 div.fL{ width: 350px;}
+div.txtTemp8 strong{
+	margin-bottom: 6px;
+	font-size: 15px;
+	color: #aad
+}
+div.txtTemp8 span{ color: #666;}
+div.txtTemp8 p{ float: right; width: 320px;}
+
+/*-------------------------------------*/
+/*               スペース              */
+/*-------------------------------------*/
+
+div.bottomspace45{
+	margin-bottom:45px;
+}
+
+div.bottomspace100{
+	margin-bottom:100px;
+}
+
+div.cssclear{
+	clear:both;
+}
