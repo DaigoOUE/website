@@ -196,7 +196,7 @@ div#newTopics{
 		float:left;
 		width:105px;
 		clear:both;
-		background: url(../img/bg_boder.gif) repeat 0 0 ;
+		/*background: url(../img/bg_boder.gif) repeat 0 0 ;*/
 	}
 
 	div#newTopics dl dd{

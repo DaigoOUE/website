@@ -73,7 +73,7 @@
  }
  
 .clearfix:after {
-	content: url(pixel.gif);
+	/*content: url(pixel.gif);*/
 	display: block;
 	clear: both;
 	height: 0;
