@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Daigo OUE -links</title>
+<meta name="keywords" content="Daigo OUE" />
+<meta name="robots" content="index,follow" />
+<meta name="description" content="サイトの説明" />
+<meta name="Copyright" content="design now" />
+<link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+<meta http-equiv="Content-Language" content="ja" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="imagetoolbar" content="no" />
+<link href="share/css/set/import.css" rel="stylesheet" type="text/css" media="all" />
+<link href="share/css/share.css" rel="stylesheet" type="text/css" media="all" />
+<link href="sample/css/index.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="share/js/jquery.js"></script>
+<script type="text/javascript" src="share/js/scroll.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script>
+$(function(){
+    var side = $("#leftContents");
+    var main = $("#mainContents");
+    var min_move = main.offset().top-190;
+    var max_move = main.offset().top + main.height() - side.height() - 2*parseInt(side.css("top") );
+					 
+    $(window).bind("scroll", function() {
+	    var wst =  $(window).scrollTop();
+        if( wst > min_move){
+	        var margin_top = wst - min_move ;
+            side.animate({"margin-top": margin_top},{duration:400,queue:false});
+        }else if( wst < min_move ){
+            side.animate({"margin-top":0},{duration:400,queue:false});
+        }
+    });    
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63119885-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header" class="clearfix">
+			<h1>Daigo OUE homepage</h1>
+			<ul id="gNavi" class="clearfix">
+				<li class="firstItem"><a href="english/links.html" title="">ENGLISH</a></li>
+        <li><a href="links.html" title="">LINKS</a></li>
+				<li><a href="memo.html" title="">MEMO</a></li>
+				<li><a href="works.html" title="">WORKS</a></li>
+				<li><a href="profile.html" title="">PROFILE</a></li>
+				<li class="lastItem"><a href="index.html" title="">TOP PAGE</a></li>
+			</ul><!-- ul#gNavi END -->
+		</div><!-- div#header END -->
+		<div id="wrapBg">
+			<div class="wrapBox clearfix">
+				<div id="mainContents">
+					<!-- ここからサンプルレイアウト -->
+					<a id="pageLink01" name="pageLink01"></a>
+					<p class="chapter7">Social Networking Service</p>
+					<div class="txtTempSet txtTemp1">
+						<span>私のSNSのページへのリンクです。興味を持ってくださった方はフォロー宜しくですヾ(⌒(ﾉ'ω')ﾉ</span>
+					</div>
+					<ul class="bgList3">
+						<li><a href="https://www.facebook.com/oue.daigo" target="_blank">Facebook</a></li>
+						<li><a href="https://twitter.com/q9ac" target="_blank">Twitter</a></li>
+						<li><a href="https://instagram.com/hffli_pb/" target="_blank">Instagram</a></li>
+						<li><a href="https://www.tumblr.com/blog/daigooue" target="_blank">Tumblr</a></li>
+						<li><a href="https://plus.google.com/115977347127245702924/posts" title="">Google+</a></li>
+					</ul>
+					<p class="chapter7">Useful Pages</p>
+					<div class="txtTempSet txtTemp1">
+						<span>役に立つページを説明とともに貼っています。物理の勉強やLaTeXを使う上での知識がまとめてあるサイト、プログラミングの知識などが紹介されているサイトのリンクです。</span>
+					</div>
+					
+					<a id="pageLink02" name="pageLink02"></a>
+					<p class="chapter8">Processing(Proce55ing)</p>
+					<table class="tableDec3">
+						<tr>
+							<th><a href="https://processing.org/reference/" target="_blank">Language Reference(API)</a></th>
+							<td>公式のAPIです。英語で書かれていますが、サンプルコードなども豊富です。チュートリアルなどもあるので、わからないことがあったらまずはここを見てみると良いと思います。</td>
+						</tr>
+						<tr>
+							<th><a href="http://beesandbombs.tumblr.com" target="_blank">BEES&BOMBS</a></th>
+							<td>BEES&BOMBSさんという方のTumblrです、とても美しい作品がたくさんです。私はこの方のGifAnimationを見てProcessingを始めました。</td>
+						</tr>
+						<tr>
+							<th><a href="http://studio.sketchpad.cc/sp/padlist/all-portfolio-sketches?" target="_blank">the gallery</a></th>
+							<td>作品を公開したり共有できるサイト。自分以外の人が作った作品を見てインスパイアされることもとってもいい経験です。</td>
+						</tr>
+					</table>
+					
+					<a id="pageLink03" name="pageLink03"></a>
+					<p class="chapter8">LaTeX</p>
+					<table class="tableDec3">
+						<tr>
+							<th><a href="http://oku.edu.mie-u.ac.jp/~okumura/texwiki/" target="_blank">TeX Wiki</a></th>
+							<td>TeXといえば三重大学の奥村先生。美文書作成入門でお馴染みの先生のホームページです。困ったらまずはここをみるところからスタートですね。</td>
+						</tr>
+						<tr>
+							<th><a href="http://www.latex-cmd.com" target="_blank">LaTeXコマンド集</a></th>
+							<td>コマンドをまとめてあるサイトです。こんなことしたい！というものがあった時、辞書的な役割を果たしてくれます。</td>
+						</tr>
+						<tr>
+							<th><a href="http://qiita.com/zr_tex8r" target="_blank">zr_tex8rさんのページ</a></th>
+							<td>基礎的なことがわかって慣れてきたらいろんなことに挑戦してみると良いかもしれません。私も今マクロが書けるように特訓しているところであります。</td>
+						</tr>
+					</table>
+					<a id="pageLink01" name="pageLink01"></a>
+					<p class="chapter7">Others</p>
+					<table class="tableDec3">
+						<tr>
+							<th><a href="http://lasie.ap.eng.osaka-u.ac.jp/home_j.html" target="blank">河田研究室(LaSIE)</a></th>
+							<td>僕が所属する大阪大学の河田研究室のホームページです。フォトニクスやプラズモニクスをキーワードに最先端の研究を行っています。</td>
+						</tr>
+					</table>
+				</div><!-- div#mainContents END -->
+				<div id="leftContents">
+					<ul id="subNavigation" class="bgList3">
+						<li><a href="#pageLink01" title="">SNS</a></li>
+						<li><a href="#pageLink02" title="">Processing</a></li>
+						<li><a href="#pageLink03" title="">LaTeX</a></li>
+						<li><a href="#pageLink04" title="">OTHERS</a></li>
+					</ul>
+				</div><!-- div#leftContents END -->
+			</div><!-- div#wrapBox END -->
+		</div><!-- div#wrapBg END -->
+		<div id="footer">
+			<p id="copyright">Copyright (c) Daigo OUE All Rights Reserved.</p>
+		</div><!-- div#footer END -->
+	</div><!-- div#wrapper -->
+</body>
+</html>
