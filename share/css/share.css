@@ -75,6 +75,11 @@ ul#gNavi li.firstItem{
   background-color: #000044;
 }
 
+ul#gNavi li.firstItemJ{
+	border-right: 1px solid #dedede;
+  background-color: #440000;
+}
+
 ul#gNavi li img{
 	vertical-align: bottom;
 }
@@ -98,6 +103,10 @@ div#header ul#gNavi li a:hover{
 
 div#header ul#gNavi li.firstItem a:hover{
 	background: #202064;
+}
+
+div#header ul#gNavi li.firstItemJ a:hover{
+	background: #642020;
 }
 
 div#footer{
