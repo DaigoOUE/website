@@ -66,30 +66,28 @@ $(function(){
 				<div id="mainContents">	
 					<a id="pageLink01" name="pageLink01"></a>
 					<p class="chapter7">MEMO</p>
-					<p class="chapter4">Processingに関するメモ</p>
+					<p class="chapter4">Memos about Processing</p>
 					<div class="txtTempSet txtTemp1">
-						<strong>Webカメラがうまく動かない時</strong>
-						<span>検索して出てくるほとんどの結果はProcessing1.0についてのものです。Processing2.0を使っている場合は<a href="http://atelier-orchard.blogspot.jp/2012/11/processing-web.html">このサイト</a>を参考にするといいです。うまくいきました。<br><br>
-						
-						<a href="http://atelier-orchard.blogspot.jp/2012/11/processing-web.html">ProcessingでWebカメラが使えないとき</a>
+            <strong>Web camera doesn't work on Processing.</strong>
+            <span>Almost all of results of searching "web camera processing" are on Processing1.0. If you use Processing2.0, <a href="http://atelier-orchard.blogspot.jp/2012/11/processing-web.html">This site</a> is useful.<br><br>
 						</span>
 					</div>
 					<p style="color:#fb6">More memos about Processing are <a href="memo_processing.html">here</a>.</p>
 					<a id="pageLink02" name="pageLink02"></a>
 					<div class="bottomspace100"></div>	
-					<p class="chapter4">LaTeXに関するメモ</p>
+          <p class="chapter4">Memos about LaTeX</p>
 					<div class="txtTempSet txtTemp1">
-							<strong>図と表を並べる方法</strong>
+							<strong>How to list figure and table horizontally</strong>
 							<span>
-								1)環境の違い<br>
-								figure環境とtable環境ではcaption周りでの定義が異なっているようです。よってそのまま<code>minipage</code>で並べることができません。そこで図と表を並べたいときは
+								1) Difference of definition<br>
+								The definition of table is different from figure around caption. Therefore, you have to modify the definition in order to use <code>minipage</code>. You have to add the following codes. 
 							<pre style="color:#696"><code>
 ¥makeatletter
 ¥def¥@captype{table}
 ¥makeatother
 							</code></pre>
-とコードを書き足す必要があります。この状態で<code>minipage</code>を並べると、図と表が横に並べることができます。サンプルを以下に記します。<br><br>
-								2)サンプルコード<pre style="color:#696"><code>
+In this condition, you can use<code>minipage</code> and list horizontally. Sample codes are shown below.<br><br>
+								2) Sample<pre style="color:#696"><code>
 ¥begin{figure}[htbp]
 	¥begin{minipage}{0.5¥hsize}
 		¥centering
@@ -116,13 +114,13 @@ $(function(){
 	¥end{minipage}
 ¥end{figure}
 								</code></pre>
-						3)出力
+						3) Output
 						<p><img src="../sample/memo/figtab.png" width="560" height="240" alt=""></p>
 						</span>
 					</div>	
 					<a id="pageLink04" name="pageLink04"></a>
 					<div class="bottomspace100"></div>		
-					<p class="chapter4">Vimに関するメモ</p>
+					<p class="chapter4">Memos about Vim</p>
 						<div class="txtTempSet txtTemp1">
 							<strong>Vimを始めよう！</strong> 
 							<span>
@@ -151,7 +149,7 @@ vim example.html
 						<p style="color:#fb6">More memos about vim are <a href="memo_vim.html">here</a>.</p>
 						<a id="pageLink03" name="pageLink03"></a>
 						<div class="bottomspace100"></div>
-					<p class="chapter4">その他のメモ</p>
+					<p class="chapter4">Other memos</p>
 					<div class="txtTempSet txtTemp1">
 						<strong>【Mac】Dockのアラート通知（アイコンが飛び跳ねるやつ）を止める方法</strong>
 						<span>
@@ -175,10 +173,10 @@ killall Dock
 				</div><!-- div#mainContents END -->
 				<div id="leftContents">
 					<ul id="subNavigation" class="bgList3">
-						<li><a href="#pageLink01" title="">Processingに関するメモ</a></li>
-						<li><a href="#pageLink02" title="">LaTeXに関するメモ</a></li>
-						<li><a href="#pageLink04" title="">Vimに関するメモ</a></li>
-						<li><a href="#pageLink03" title="">その他のメモ</a></li>
+						<li><a href="#pageLink01" title="">about Processing</a></li>
+						<li><a href="#pageLink02" title="">about LaTeX</a></li>
+						<li><a href="#pageLink04" title="">about Vim</a></li>
+						<li><a href="#pageLink03" title="">Other memos</a></li>
 					</ul>
 				</div><!-- div#leftContents END -->
 			</div><!-- div#wrapBox END -->
