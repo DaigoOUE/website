@@ -151,23 +151,22 @@ vim example.html
 						<div class="bottomspace100"></div>
 					<p class="chapter4">Other memos</p>
 					<div class="txtTempSet txtTemp1">
-						<strong>【Mac】Dockのアラート通知（アイコンが飛び跳ねるやつ）を止める方法</strong>
+						<strong>【Mac】Do you want to stop Alert in Dock?</strong>
 						<span>
-							ターミナルに次のように入力します。
+							Enter the following command to Teriminal.
 							<pre style="color:#696"><code>
 defaults write com.apple.dock no-bouncing -boolean true
 							</code></pre>
-							さらにDockを再起動します。
+							Next, restart Dock.
 							<pre style="color:#696"><code>
 killall Dock
 							</code></pre>
-							これでアプリを開かなくてもアイコンが飛び跳ねることはありません。<br>
-							元に戻したい時は次のように設定を削除します。
-							<pre style="color:#696"><code>
+              If you want to redo the setting, you should enter the following command.
+              <pre style="color:#696"><code>
 defaults write com.apple.dock no-bouncing
 killall Dock
 							</code></pre>
-							OSXの10.10.2で動作確認済みです。
+							I've confirmed this method can work with OSX 10.10.2.
 						</span>
 					</div>
 				</div><!-- div#mainContents END -->
