@@ -133,17 +133,18 @@ In this condition, you can use<code>minipage</code> and list horizontally. Sampl
 								<pre style="color:#696"><code>
 vim example.html
 								</code></pre>
-								今の状態はノーマルモードと言ってコマンドを入力して捜査するモードです。だから、このままでは文字を入力することはできません。"<code>a</code>"か"<code>i</code>"を押すことでINSERTモードになり普通に文字を打ち込むことができるようになります。<br/>
-								編集が終了したら、<code>esc</code>ボタンを押してノーマルモードに戻りましょう。ファイルを保存するためには<code>:w</code>と入力します。基本的にコマンドを入力するためには、まず<code>:</code>を入力する必要があります。そして今回つかった<code>w</code>はファイルを保存するコマンドになります。保存を終えて、vimを終了するためには<code>:q</code>と入力します。<br/>
+								Now, you are in Nomal mode, in which you have to enter commands to edit the file. (For example, if you want to delete a  letter, Backspace key is NOT available, but you can use "x" key.) Therefore, let's switch to insert mode, in which you can enter sentences to the textfile.<br/>
+								Press "<code>a</code>" or "<code>i</code>", and you will be in insert mode and edit the file in normal way. (you can use Backspace to delete letters)<br/>
+								When you finish edit, let's press <code>esc</code> key and go back to nomal mode. To save the text, enter <code>:w</code>. Basically, before entering command, you need <code>:</code>. In this case, <code>w</code> is command to save a file. After saveing the data, to quit Vim enter command, <code>:q</code>.<br/>
 								<div class="bottomspace45"></div>
-								これで一応文字をテキストとして入力することはできるようになりましたが、このままではノーマルモードの存在意義が...ということになってしまうので、ノーマルモードではこんな便利なことができるよ！という例を幾つか紹介して終わりたいと思います。<br/>
+								Finally, I tell you some useful commands working on Nomal mode.<br/>
 								<div class="bottomspace45"></div>
-								便利なコマンドその１"<code>dd</code>" : 現在の行のテキストを切り取ります。バックスペースを何度も押す必要がなくなります。<br/>
-								便利なコマンドその２"<code>「行きたい行」G</code>" : 例えば今100行目で、13行目に行くためには、<code>13G</code>と入力してあげればOKです。<br/>
-								便利なコマンドその３"<code>0</code>" : このコマンドでは現在カーソルがある行の頭にカーソルを持っていくことができます。<br/>
-								便利なコマンドその４"<code>$</code>" : このコマンドでは現在カーソルがある行の行の最後にカーソルを持っていくことができます。<br/>
+								Useful command 1"<code>dd</code>" : cut the current line. you don't have to tap Backspace so many times!<br/>
+								Useful command 2"<code>'line number' G</code>" : go to the line<br/>
+								Useful command ３"<code>0</code>" : go to the first letter in current line<br/>
+								Useful command ４"<code>$</code>" : go to the last letter in current line<br/>
 								<div class="bottomspace45"></div>
-								他にも便利なコマンドがたくさんありますが、必要に応じてググってみるといいと思います。全部コマンドを並べてみても長くなってしまうだけのなので、今回は幾つか紹介するだけにしました。他にも便利なコマンドがあったり、vim自体設定を弄ることができるので、メモとして残していきたいと思います。<br/>
+								There are so many commands. If you want to do something on Vim, let's search on Google! In this article, I tell some basic commands, because the number of all commands are so huge. There are also useful commands, so I would like to tell you other useful commands next time. You can mess around with settings on Vim, so I add memos about how to change the settings.<br/>
 								<div class="bottomspace100"></div>
 								(2015.4.25.SAT)
 							</span>
