@@ -59,6 +59,10 @@ div.icon{
 	padding-left: 20px;
 }
 
+div.icon a.firstItem{
+  padding-right: 40px;
+}
+
 /* スライドショー */
 
 #slides {
@@ -204,3 +208,17 @@ div#newTopics{
 		margin-left:75px;
 		padding-left: 20px;
 	}
+
+div.index02main{
+  width: 500px;
+  height: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 100px;
+}
+
+div.index02main span.caption{
+  margin-top: 10px;
+  float: right;
+  color: #666;
+}
