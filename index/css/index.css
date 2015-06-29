@@ -55,12 +55,13 @@ div#mainImgBox div#mainMessageBox{
 	}
 
 div.icon{
+  z-index: 3;
 	float: right;
 	padding-left: 20px;
 }
 
 div.icon a.firstItem{
-  padding-right: 40px;
+  margin-right: 100px;
 }
 
 /* スライドショー */
@@ -178,15 +179,14 @@ div#newTopics{
 
 	div#newTopics strong{
 		font-weight: bold;
-		font-size: 13px;
+		font-size: 12px;
 		margin-bottom: 8px;
 		display: block;
-		font-size: 14px;
 	}
 
 	div#newTopics dl{
 		width: 500px;
-		height: 180px;
+		height: 100px;
 		overflow:scroll;
 	}
 
