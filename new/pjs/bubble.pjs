@@ -1,0 +1,190 @@
+int[] SIZE = {
+  screen.width, screen.height
+};
+float time = 0;
+float step = 0.001;
+
+int Nb = 50;
+
+void setup() {
+  size(SIZE[0], SIZE[1]);
+  colorMode(HSB, 100);
+  for (int i = 0; i < bubble.length; ++i) {
+    bubble[i] = new Bubble(i);
+  }
+}
+
+Bubble[] bubble = new Bubble[Nb];
+Field field = new Field();
+int[][] flag = new int[bubble.length][bubble.length];
+
+void draw() {
+  size(SIZE[0], SIZE[1]);
+  background(0);
+  for (int i = 0; i < bubble.length; ++i) {
+    bubble[i].run(field);
+  }
+  for (int i = 0; i < bubble.length; ++i) {
+    for (int j = i+1; j < bubble.length; ++j) {
+      judge(bubble[i], bubble[j]);
+    }
+  }
+
+  time += step;
+}
+
+void absorption(Bubble b1, Bubble b2) {
+  if (b1.r/2 > b2.r/2) {
+    if (b1.r < 200) {
+      b1.r += b2.r/6;
+      b1.vol = PI*pow(b1.r/2, 2);
+    }
+    b1.hue = (b1.hue/2 + b2.hue/2)%100;
+    b2.reset();
+  } else {
+    if (b2.r < 200) {
+      b2.r += b1.r/6;
+      b2.vol = PI*pow(b2.r/2, 2);
+    }
+    b2.hue = (b1.hue/2 + b2.hue/2)%100;
+    b1.reset();
+  }
+}
+
+void reflect(Bubble b1, Bubble b2) {
+  float elast = 0.3;
+  float[] nv1 = new float[2];
+  float[] nv2 = new float[2];
+  float A = (1+elast)/(b1.m/b2.m + 1);
+  float B = (1+elast)/(b2.m/b1.m + 1);
+  for (int i = 0; i < 2; ++i) {
+    nv1[i] = (-b1.v[i] + b2.v[i])*A + b1.v[i];
+    nv2[i] = (-b2.v[i] + b1.v[i])*B + b2.v[i];
+  }
+  b1.v = nv1;
+  b2.v = nv2;
+}
+
+void judge(Bubble b1, Bubble b2) {
+  int b1l = b1.label;
+  int b2l = b2.label;
+  float distance = sqrt(pow(b1.x[0]-b2.x[0], 2)+pow(b1.x[1]-b2.x[1], 2));
+  float dv = sqrt(pow(b1.v[0]-b2.v[0], 2)+pow(b1.v[1]-b2.v[1], 2));
+  float rand = random(0, 100);
+  if (rand < 10) {
+    if ((distance < b1.r/2 + b2.r/2)&&(dv > 0.01)) {
+      absorption(b1, b2);
+    }
+  } else {
+    if ((distance < b1.r/2 + b2.r/2)&&(b1.r * b2.r != 0)) {
+      if (flag[b1l][b2l] == 0) {
+        flag[b1l][b2l] = 1;
+        reflect(b1, b2);
+      }
+    } else {
+      if (flag[b1l][b2l] == 1) {
+        flag[b1l][b2l] = 0;
+      }
+    }
+  }
+}
+
+class Field {
+  float rho = 10000;
+  float g = 1;
+  float[] force(Bubble b) {
+    float[] a = new float[2];
+    float rand = random(-1, 1);
+    a[0] = rand/abs(rand)*b.vol/8 - b.v[0];
+    a[1] = -rho*b.vol*g + g*b.m - b.vol*b.v[1];
+    return(a);
+  }
+}
+
+class Bubble {
+  float[] x = new float[2];
+  float[] v = new float[2];
+  float[] a = new float[2];
+  float[] f = new float[2];
+
+  float r, m, vol;
+  float density = 0.1;
+  float h;
+  float omega;
+
+  float hue;
+  int label;
+
+  Bubble(int l) {
+    r = random(10, 40);
+    vol = PI*pow(r/2, 2);
+    m = vol*density;  
+    x[0] = random(0, width);
+    x[1] = random(height*random(0.4, 1), height);
+    v[0] = random(-15, 15);
+    v[1] = random(-1, 1);
+    omega = random(10, 150);
+    label = l;
+    hue = 100*l/Nb;
+  }
+
+  void force(Field fld) {
+    f = fld.force(this);
+  }
+
+  void neq() {
+    for (int i = 0; i < 2; ++i) {
+      a[i] = f[i]/m;
+    }
+  }
+
+  void reset() {
+    x[0] = random(0, width);
+    x[1] = random(height*random(0.8, 1), height);
+    v[0] = random(-15, 15);
+    v[1] = random(-1, 1);
+    r = random(0, 40);
+    if ((r%2 == 0)||(r < 10)) {
+      r = 0;
+    }
+    vol = PI*pow(r/2, 2);
+    m = vol*density;
+    hue = random(0, 100);
+  }
+
+  void parameterSet() {
+    for (int i = 0; i < 2; ++i) {
+      v[i] += a[i]*step;
+      x[i] += v[i]*step + abs(v[1]+v[0])*random(-0.0005, 0.0005);
+    }
+    if ((x[0]-r/2 > width)||(x[0]+r/2 < 0)) {
+      reset();
+    }
+    if (x[1]+r/2 < 0) {
+      reset();
+    }
+    if (r == 0) {
+      for (int i = 0; i < 100000000; ++i) {
+      }
+      reset();
+    }
+  }
+
+  void display() {
+    noStroke();
+    fill(hue, 70, 99, 20);
+    float R = r + random(r/12, r/9)*cos(radians(1/(r+1)*time));
+    for (int i = 0; i < 3; ++i) {
+      ellipse(x[0], x[1], R-i, R-i);
+    }
+  }
+
+  void run(Field fld) {
+    force(fld);
+    neq();
+    parameterSet();
+    display();
+  }
+}
+
+
