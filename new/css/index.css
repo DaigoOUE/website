@@ -73,3 +73,20 @@ div.snslinks img{
   max-width:90%;
   height:auto;
 }
+
+div#footer {
+  background: #000;
+  filter:alpha(opacity=50);
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  text-align:center;
+  z-index:2;
+}
+
+div#footer p{
+  color: #ff0;
+}
+
+div.cssclear{
+  clear:both;
+}
