@@ -16,16 +16,14 @@
     <script>
       $(function () {
         sizing();
-        Draw();
         $(window).resize(function() {
           sizing();
-          Draw();
         });
       });
       // div#wrapperからcanvas#cnvsのサイズをもらう（#wrapperのサイズはCSSで）
       function sizing(){
-        $('#cnvs').attr({height:$('#wrapper').height()});
-        $('#cnvs').attr({width:$('#wrapper').width()});
+        $('#canvas01').attr({height:$('#wrapper').height()});
+        $('#canvas01').attr({width:$('#wrapper').width()});
       };
     </script>
     <script>
@@ -40,16 +38,14 @@
       };
     </script>
     <script id="processing-code" type="application/processing">
-      int[] SIZE = {
-        screen.width, screen.height
-      };
       float time = 0;
       float step = 0.001;
 
-      int Nb = 40;
+      int Nb = 20;
+      float radiusOfBubble = screen.width/20;
 
       void setup() {
-        size(SIZE[0], SIZE[1]);
+        size(window.innerWidth, window.innerHeight);
         colorMode(HSB, 100);
         for (int i = 0; i < bubble.length; ++i) {
           bubble[i] = new Bubble(i);
@@ -61,7 +57,7 @@
       int[][] flag = new int[bubble.length][bubble.length];
 
       void draw() {
-        size(SIZE[0], SIZE[1]);
+        size(window.innerWidth, window.innerHeight);
         background(0);
         for (int i = 0; i < bubble.length; ++i) {
           bubble[i].run(field);
@@ -185,7 +181,7 @@
           x[1] = random(height*random(0.8, 1), height);
           v[0] = random(-15, 15);
           v[1] = random(-1, 1);
-          r = random(0, 60);
+          r = random(0, radiusOfBubble);
           if ((r%2 == 0)||(r < 10)) {
             r = 0;
           }
