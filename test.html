@@ -5,53 +5,38 @@
 </script>
 <script>
 window.onload = function(){
-// canvas要素
-var canvas = document.getElementsByTagName('canvas')[0];
-// Proccessingのコードが書かれたscript要素
-var codeElm = document.getElementById('processing-code');
-// 上記要素の内容を取得
-var code = codeElm.textContent || codeElm.innerText;
-new Processing(canvas, code);
+  var canvas = document.getElementsByTagName('canvas')[0];
+  var codeElm = document.getElementById('processing-code');
+  var code = codeElm.textContent || codeElm.innerText;
+  new Processing(canvas, code);
 };
 </script>
 <script id="processing-code" type="application/processing">
-  void setup() {
-    size(500, 500, P3D);
-    background(0);
-  }
+void setup() {
+  size(500, 500);
+  background(0);
+}
+float t = 0;
+float x = 250;
+float y = 250;
+float vx = 2;
+float vy = 1;
 
-  int time = 0;
-  void draw() {
-    lights();
-    translate(width/2, height/2, 0);
-    rotate(radians(time), cos(radians(time)), sin(radians(time)), 0);
-    noStroke();
-    for (int i = 0; i < 7; ++i) {
-      pushMatrix();
-      rotateX(radians(6*time)+TWO_PI*i/7);
-      translate(200*cos(radians(time)+TWO_PI*i/7), 0, 0);
-      fill(510*abs(mouseX-width/2)/width, 510*abs(mouseY-height/2)/height, 0, 90);
-      box(20);
-      popMatrix();
-    }
-    for (int i = 0; i < 7; ++i) {
-      pushMatrix();
-      rotateY(radians(6*time)+TWO_PI*i/7);
-      translate(0, 200*cos(radians(time)+TWO_PI*i/7), 0);
-      fill(0, 510*abs(mouseX-width/2)/width, 510*abs(mouseY-height/2)/height, 90);
-      box(20);
-      popMatrix();
-    }
-    for (int i = 0; i < 7; ++i) {
-      pushMatrix();
-      rotateZ(radians(6*time)+TWO_PI*i/7);
-      translate(0, 0, 200*cos(radians(time)+TWO_PI*i/7));
-      fill(510*abs(mouseX-width/2)/width, 0, 510*abs(mouseY-height/2)/height, 90);
-      box(20);
-      popMatrix();
-    }
-    ++time;
+void draw() {
+  background(100);
+  x += vx;
+  y += vy;
+  if(x > 500 || x < 0){
+    vx = -vx;
   }
+  if(y > 500 || y < 0){
+    vy = -vy;
+  }
+  rectMode(CENTER);
+  fill(102,102,0);
+  rect(x, y,20,20);
+  ++t;
+}
 </script>      
 </head>
 <body>
