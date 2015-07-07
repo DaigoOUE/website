@@ -93,11 +93,8 @@
         int b2l = b2.label;
         float distance = sqrt(pow(b1.x[0]-b2.x[0], 2)+pow(b1.x[1]-b2.x[1], 2));
         float dv = sqrt(pow(b1.v[0]-b2.v[0], 2)+pow(b1.v[1]-b2.v[1], 2));
-        float rand = random(0, 100);
-        if (rand < 10) {
-          if ((distance < b1.r/2 + b2.r/2)&&(dv > 0.01)) {
-            absorption(b1, b2);
-          }
+        if ((distance < b1.r/2 + b2.r/2)&&(dv > 0.01)) {
+          absorption(b1, b2);
         }
       }
 
