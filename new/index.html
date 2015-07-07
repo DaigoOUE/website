@@ -54,7 +54,6 @@
 
       Bubble[] bubble = new Bubble[Nb];
       Field field = new Field();
-      int[][] flag = new int[bubble.length][bubble.length];
 
       void draw() {
         size(window.innerWidth, window.innerHeight);
@@ -89,20 +88,6 @@
         }
       }
 
-      void reflect(Bubble b1, Bubble b2) {
-        float elast = 0.3;
-        float[] nv1 = new float[2];
-        float[] nv2 = new float[2];
-        float A = (1+elast)/(b1.m/b2.m + 1);
-        float B = (1+elast)/(b2.m/b1.m + 1);
-        for (int i = 0; i < 2; ++i) {
-          nv1[i] = (-b1.v[i] + b2.v[i])*A + b1.v[i];
-          nv2[i] = (-b2.v[i] + b1.v[i])*B + b2.v[i];
-        }
-        b1.v = nv1;
-        b2.v = nv2;
-      }
-
       void judge(Bubble b1, Bubble b2) {
         int b1l = b1.label;
         int b2l = b2.label;
@@ -112,17 +97,6 @@
         if (rand < 10) {
           if ((distance < b1.r/2 + b2.r/2)&&(dv > 0.01)) {
             absorption(b1, b2);
-          }
-          } else {
-          if ((distance < b1.r/2 + b2.r/2)&&(b1.r * b2.r != 0)) {
-            if (flag[b1l][b2l] == 0) {
-              flag[b1l][b2l] = 1;
-              reflect(b1, b2);
-            }
-            } else {
-            if (flag[b1l][b2l] == 1) {
-              flag[b1l][b2l] = 0;
-            }
           }
         }
       }
