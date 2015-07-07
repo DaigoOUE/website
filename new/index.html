@@ -17,7 +17,7 @@
     <script type="text/javascript" src="js/excanvas.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
     <script>
-    $(function() {
+      $(function() {
         //scroll in a same page
         $('a[href^=#]').click(function(){
           var speed = 700;
@@ -26,8 +26,45 @@
           var position = target.offset().top;
           $("html, body").animate({scrollTop:position}, speed, "swing");
           return false;
-          });
         });
+      });
+    </script>
+    <script>
+      $(function(){
+        var margin = 10,   //ウインドウ上部からどれぐらいの位置で変化させるか
+        sectionTop = new Array, //sectionのTop位置格納用
+        current = -1;   //現在のカレント位置
+
+        //(1)各sectionの縦位置を取得
+        $('.mainContents').each(function(i) {
+          sectionTop[i] = $(this).offset().top;
+        });
+
+        //init
+        changeNavCurrent(0);
+
+        //スクロールした時の処理
+        $(window).scroll(function(){
+          scrollY = $(window).scrollTop();
+
+          //(2)各セクションの位置とスクロール位置を比較して、条件にあったらchangeNavCurrentを実行
+          for (var i = sectionTop.length - 1 ; i >= 0; i--) {
+            if (scrollY > sectionTop[i] - margin) {
+              changeNavCurrent(i);
+              break;
+            }
+          };
+        });
+        //(3)ナビの処理
+        function changeNavCurrent(curNum) {
+          if (curNum != current) {
+            current = curNum;
+            curNum2 = curNum + 1;//HTML順序用
+            $('#menu li').removeClass('on');
+            $('#menu li:nth-child(' + curNum2 +')').addClass('on');
+          }
+        };
+      });
     </script>
     <script>
       $(function () {
@@ -260,12 +297,12 @@
       <a href="https://www.tumblr.com/blog/daigooue" target="_blank"><img src="img/icon/tumblr.png" width="22" alt="tumblr"></a><br /><br />
       <a href="https://plus.google.com/115977347127245702924/posts" target="_blank"><img src="img/icon/g+icon.png" width="22" alt="tumblr"></a>
     </div>
-    <div class="menu">
-    <ul>
-      <a href="#about"><li>about</li></a>
-      <a href="#works"><li>works</li></a>
-      <a href="#more"><li>more</li></a>
-    </ul>
+    <div id="menu">
+      <ul>
+        <li><a href="#about">about</a></li>
+        <li><a href="#works">works</a></li>
+        <li><a href="#more">more</a></li>
+      </ul>
     </div>
   </body>
 </html>

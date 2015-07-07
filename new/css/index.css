@@ -78,7 +78,7 @@ div.snslinks img{
   height:auto;
 }
 
-div.menu{
+div#menu{
   filter:alpha(opacity=50);
   -moz-opacity: 0.8;
   opacity: 0.8;
@@ -89,25 +89,23 @@ div.menu{
   float:right;
 }
 
-div.menu li{
+div#menu li{
   list-style:none;
 }
 
-div.menu li{
+div#menu li{
   margin:0;
   padding:20px;
   background:#446;
   border: 1px solid #666;
+  transition: background-color 0.3s linear 0;
 }
 
-div.menu li.on{
-  margin:0;
-  padding:20px;
-  background:#777;
-  border: 1px solid #666;
+div#menu li.on{
+  background-color:#888;
 }
 
-div.menu a{
+div#menu a{
   color:#aaa;
   text-decoration:none;
 }
