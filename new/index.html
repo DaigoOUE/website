@@ -8,11 +8,27 @@
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="imagetoolbar" content="no" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
     <link href="css/index.css" rel="stylesheet" type="text/css" media="all" />
     <script src="js/processing.js"></script>
     <script src="js/processing.min.js"></script>
     <script type="text/javascript" src="js/excanvas.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+    <script>
+    $(function() {
+        //scroll in a same page
+        $('a[href^=#]').click(function(){
+          var speed = 700;
+          var href= $(this).attr("href");
+          var target = $(href == "#" || href == "" ? 'html' : href);
+          var position = target.offset().top;
+          $("html, body").animate({scrollTop:position}, speed, "swing");
+          return false;
+          });
+        });
+    </script>
     <script>
       $(function () {
         sizing();
@@ -41,7 +57,7 @@
       float time = 0;
       float step = 0.001;
 
-      int Nb = 20;
+      int Nb = 10;
       float radiusOfBubble = screen.width/20;
 
       void setup() {
@@ -50,6 +66,7 @@
         for (int i = 0; i < bubble.length; ++i) {
           bubble[i] = new Bubble(i);
         }
+        frameRate(30);
       }
 
       Bubble[] bubble = new Bubble[Nb];
@@ -104,7 +121,7 @@
         float[] force(Bubble b) {
           float[] a = new float[2];
           float rand = random(-1, 1);
-          a[0] = rand/abs(rand)*b.vol/8 - b.v[0];
+          a[0] = -b.v[0];
           a[1] = -rho*b.vol*g + g*b.m - b.vol*b.v[1];
           return(a);
         }
@@ -129,7 +146,7 @@
           vol = PI*pow(r/2, 2);
           m = vol*density;  
           x[0] = random(0, width);
-          x[1] = random(height*random(0.4, 1), height);
+          x[1] = random(0, height);
           v[0] = random(-15, 15);
           v[1] = random(-1, 1);
           omega = random(10, 150);
@@ -164,7 +181,7 @@
         void parameterSet() {
           for (int i = 0; i < 2; ++i) {
             v[i] += a[i]*step;
-            x[i] += v[i]*step + abs(v[1]+v[0])*random(-0.0005, 0.0005);
+            x[i] += v[i]*step;
           }
           if ((x[0]-r/2 > width)||(x[0]+r/2 < 0)) {
             reset();
@@ -243,6 +260,12 @@
       <a href="https://www.tumblr.com/blog/daigooue" target="_blank"><img src="img/icon/tumblr.png" width="22" alt="tumblr"></a><br /><br />
       <a href="https://plus.google.com/115977347127245702924/posts" target="_blank"><img src="img/icon/g+icon.png" width="22" alt="tumblr"></a>
     </div>
-    
+    <div class="menu">
+    <ul>
+      <a href="#about"><li>about</li></a>
+      <a href="#works"><li>works</li></a>
+      <a href="#more"><li>more</li></a>
+    </ul>
+    </div>
   </body>
 </html>
