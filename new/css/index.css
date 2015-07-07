@@ -85,7 +85,7 @@ div.menu{
   position:fixed;
   top:25%;
   right:0;
-  z-index:2;
+  z-index:3;
   float:right;
 }
 
