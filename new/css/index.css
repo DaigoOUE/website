@@ -11,8 +11,8 @@ html, body{
 
 body #wrapper{
   width: 100%;
-  height:100%;
   min-height:100%;
+  height:auto;
   overflow: hidden;
   position: fixed;
   z-index: 0;
@@ -40,7 +40,8 @@ body #wrapper{
 }
 
 div#about img{
-  max-width:80%;
+  margin-top:5%;
+  max-width:60%;
   height:auto;
 }
 
@@ -50,20 +51,50 @@ div#about img{
 
 .mainContents{
   width:100%;
-  height:90%;
-  padding-top: 10%;
+  min-height:100%;
+  height:auto;
 }
 
-div#works img{
-  float left;
-  margin-top: 20px;
+div.mainContents h1{
+  padding-top: 5%;
+}
+
+div#works .contents{
+  float: left;
+  margin-top: 0px;
   margin-left:40px;
   margin-right:40px;
 }
 
+div#works .column2{
+  width:660px;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+div#works h2{
+  margin-top:100px;
+}
+
+div#works .contents h3{
+  margin:0;
+  padding:0;
+  color: #aaa;
+}
+
+div#works .contents a{
+  text-decoration:none;
+  color: #aaa;
+}
+
+div#works span.caption{
+  color:#666;
+  font-size:11pt;
+}
+
 div#more h1{
   color: #444;
-  padding-top: 15%;
+  padding-top: 20%;
 }
 
 div.snslinks{
@@ -98,11 +129,12 @@ div#menu li{
   padding:20px;
   background:#446;
   border: 1px solid #666;
+  border-right:none;
   transition: background-color 0.3s linear 0;
 }
 
 div#menu li.on{
-  background-color:#888;
+  background-color:#333;
 }
 
 div#menu a{

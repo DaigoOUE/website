@@ -8,9 +8,6 @@
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="imagetoolbar" content="no" />
-
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
     <link href="css/index.css" rel="stylesheet" type="text/css" media="all" />
     <script src="js/processing.js"></script>
     <script src="js/processing.min.js"></script>
@@ -31,7 +28,7 @@
     </script>
     <script>
       $(function(){
-        var margin = 10,   //ウインドウ上部からどれぐらいの位置で変化させるか
+        var margin = 100,   //ウインドウ上部からどれぐらいの位置で変化させるか
         sectionTop = new Array, //sectionのTop位置格納用
         current = -1;   //現在のカレント位置
 
@@ -280,7 +277,20 @@
         <h2>Keynote</h2>
         <img src="works/graffiti/img02.png" width="250">
         <img src="works/graffiti/img03.png" width="250">
+        <div class="cssclear"></div>
+        <h2>Application</h2>
+        <div class="column2">
+          <div class="contents">
+            <h3><a href="works/application/bounce.html">Bounce</a></h3>
+            <a href="works/application/bounce.html" target="_blank"><img src="works/application/img01.png" width="250"></a>
+          </div>
+          <div class="contents">
+            <h3><a href="works/application/stclock.html">ST Clock</a></h3>
+            <a href="works/application/bounce.html" target="_blank"><img src="works/application/img02.png" width="250" ></a>
+          </div>
+        </div>
       </div>
+      <div class="cssclear"></div>
       <div id="more" class="mainContents">
         <h1>More information is coming soon...</h1>
       </div>

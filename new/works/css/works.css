@@ -1,0 +1,39 @@
+body{
+  background-color:#000;
+}
+
+div.contents{
+  width:100%;
+  min-height:100%;
+  height:auto;
+  text-align:center;
+}
+
+div.contents h1{
+  color:#fff;
+  margin-top:1%;
+}
+
+div.contents canvas{
+  width: 500px;
+  height:500px;
+}
+
+div.caption{
+  text-align: left;
+  margin-top:10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  color: #aaa;
+  font-size: 11pt;
+}
+
+div.caption h2{
+  margin:0;
+}
+
+div.caption ul{
+  margin-top:5px;
+  text-align: left;
+}
