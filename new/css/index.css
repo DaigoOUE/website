@@ -60,16 +60,26 @@ div.mainContents h1{
 }
 
 div#works .contents{
+  position: relative;
   float: left;
   margin-top: 0px;
   margin-left:40px;
   margin-right:40px;
+  margin-bottom:45px;
 }
 
+
+div#works .contents .new{
+  position: absolute;
+  top:40px;
+  left:10px;
+  z-index:3;
+}
 div#works .column2{
   width:660px;
   margin-right:auto;
   margin-left:auto;
+  padding-bottom: 45px;
 }
 
 div#works h2{
