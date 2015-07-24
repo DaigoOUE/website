@@ -36,7 +36,7 @@ body #wrapper{
 }
 
 .container h2{
-  color: #aaa;
+  color: #fff;
 }
 
 div#about img{
@@ -59,6 +59,11 @@ div.mainContents h1{
   padding-top: 5%;
 }
 
+div.mainContents p{
+  padding-bottom: 45px;
+  color: #fff;
+}
+
 div#works .contents{
   position: relative;
   float: left;
@@ -77,6 +82,7 @@ div#works .contents .new{
 }
 div#works .column2{
   width:660px;
+  height: auto;
   margin-right:auto;
   margin-left:auto;
   padding-bottom: 45px;
@@ -172,4 +178,27 @@ div#footer p{
 
 div.cssclear{
   clear:both;
+}
+
+div#modal-content{
+  width: 50%;
+  margin: 0;
+  padding: 10px 20px;
+  border: 2px solid #aaa;
+  background: #fff;
+  position: fixed;
+  display: none;
+  z-index: 5;
+}
+
+div.button-link{
+  color: #00f;
+  text-decoration: underline;
+}
+
+div.button-link:hover{
+  cursor:pointer;
+  color: #f00;
+}
+div#modal-overlay{
 }

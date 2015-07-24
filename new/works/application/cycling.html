@@ -31,8 +31,8 @@
       float l2 = 100;
 
       //rotation speed of pedal
-      float omega = 1;
-      int gear = 1;
+      float omega = 2;
+      int gear = 2;
       int additional = 0;
       int clicked = 0;
 
@@ -232,8 +232,18 @@
         triangle(width-100, height-15, width-104, height-22.5, width-96, height-22.5);
         triangle(width-45, height-20, width-52.5, height-24, width-52.5, height-16);
       }
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    </script>      
+      ga('create', 'UA-63119885-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
   </head>
   <body>
     <div class="contents">
@@ -242,12 +252,15 @@
       <div class="caption">
         <h2>自転車に乗る人。</h2>
         <ul>
-          <li>キーボードの上下キーで自転車を漕ぐ速度を変えられます。</li>
-          <li>キーボードの左右キーで自転車のギアを変えることができます。</li>
+          <li>キーボードの上下キーで漕ぐ速さを変えることができます。</li>
+          <li>キーボードの左右キーでギアを変えることができます。</li>
           <li>スペースキーを何回か押してみると...?</li>
-          <li>高校2年生で習う簡単な数学。2円の共有点を求める問題。</li>
+          <li>高校2年生で習う簡単な数学。2つの円の共有点を求める問題。</li>
         </ul>
       </span>
+      <center>
+        <p><a href="../../index.html">Back to Home</a></p>
+      </center>
     </div>
   </body>
 </html>

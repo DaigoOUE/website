@@ -37,6 +37,7 @@
           sectionTop[i] = $(this).offset().top;
         });
 
+        $('#menu').append('<div id="#current"></div>');
         changeNavCurrent(0);
 
         $(window).scroll(function(){
@@ -52,7 +53,7 @@
         function changeNavCurrent(curNum) {
           if (curNum != current) {
             current = curNum;
-            curNum2 = curNum + 1;
+            var curNum2 = curNum + 1;
             $('#menu li').removeClass('on');
             $('#menu li:nth-child(' + curNum2 +')').addClass('on');
           }
@@ -234,7 +235,6 @@
       ga('send', 'pageview');
 
     </script>
-
   </head>
   <body>
     <div id="wrapper">
@@ -247,34 +247,60 @@
       </div>
       <div id="works" class="mainContents">
         <h1>Works</h1>
-        <h2>Photoshop</h2> 
-        <img src="works/graffiti/img01.png" width="250">
+        <h2>Photoshop</h2>
+        <div class="column2">
+          <div class="contents">
+            <h3>Water</h3>
+            <img src="works/graffiti/img01.png" width="250">
+          </div>
+          <div class="contents">
+            <h3>Thunder Tree</h3>
+            <img src="works/graffiti/img04.png" width="250">
+            <div class="new">
+              <img src="img/new.png" width="40">
+            </div>
+          </div>
+          <div class="cssclear"></div>
+        </div>
         <h2>Keynote</h2>
-        <img src="works/graffiti/img02.png" width="250">
-        <img src="works/graffiti/img03.png" width="250">
-        <div class="cssclear"></div>
-        <h2>Application</h2>
+        <p> All works are done only with Keynote.</p>
+        <div class="column2">
+          <div class="contents">
+            <h3>Pikachu</h3>
+            <img src="works/graffiti/img02.png" width="250">
+          </div>
+          <div class="contents">
+            <h3>Gundam</h3>
+            <img src="works/graffiti/img03.png" width="250">
+          </div>
+          <div class="cssclear"></div>
+        </div>
+        <h2>Web Application</h2>
         <div class="column2">
           <div class="contents">
             <h3><a href="works/application/bounce.html">Bounce</a></h3>
-            <a href="works/application/bounce.html" target="_blank"><img src="works/application/img01.png" width="250"></a>
+            <a href="works/application/bounce.html"><img src="works/application/img01.png" width="250"></a>
+          </div>
+          <div id="modal-content">
+            <p>test</p>
+            <p><a id="modal-close" class="button-link">close</a><p>
           </div>
           <div class="contents">
             <h3><a href="works/application/stclock.html">ST Clock</a></h3>
-            <a href="works/application/stclock.html" target="_blank"><img src="works/application/img02.png" width="250" ></a>
+            <a href="works/application/stclock.html"><img src="works/application/img02.png" width="250" ></a>
           </div>
         </div>
         <div class="column2">
           <div class="contents">
             <h3><a href="works/application/cycling.html">Cycling</a></h3>
-            <a href="works/application/cycling.html" target="_blank"><img src="works/application/img03.png" width="250"></a>
+            <a href="works/application/cycling.html"><img src="works/application/img03.png" width="250"></a>
             <div class="new">
               <img src="img/new.png" width="40">
             </div>
           </div>
         </div>
+        <div class="cssclear"></div>
       </div>
-      <div class="cssclear"></div>
       <div id="more" class="mainContents">
         <h1>
           More information is coming soon...<br />
