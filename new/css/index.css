@@ -202,3 +202,24 @@ div.button-link:hover{
 }
 div#modal-overlay{
 }
+
+a.imglink{
+  width: 250px;
+  height: 250px;
+  background-color: #fff;
+}  
+
+a.imglink:hover img {
+  opacity: .5;
+  -webkit-opacity: .5;
+  -moz-opacity: .5;
+  filter: alpha(opacity=50);  /* IE lt 8 */
+  -ms-filter: "alpha(opacity=50)"; /* IE 8 */
+}
+ 
+a.imglink img {
+  -webkit-transition: opacity 0.8s ease-out;
+  -moz-transition: opacity 0.8s ease-out;
+  -ms-transition: opacity 0.8s ease-out;
+  transition: opacity 0.8s ease-out;
+}
