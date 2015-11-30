@@ -1,0 +1,35 @@
+.news{
+  height:140px;
+  position:fixed;
+  top:50%;
+  margin-top:-70px;
+}
+
+.news dl{
+  width: 300px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:table-cell;
+  vertical-align:middle;
+  overflow:hidden;
+}
+
+.news dt{
+  padding:5px 10px;
+  margin-right:20px;
+  float:left;
+  clear:both;
+}
+
+.news dd{
+  padding:5px 10px;
+  padding-left:45px;
+}
+
+.news li.last{
+}
+.footer{
+  position:fixed;
+  bottom:0;
+}
