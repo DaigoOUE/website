@@ -1,12 +1,21 @@
+.bxslider{
+  margin:0;
+  padding:0;
+}
+
+.bx-pager{
+  display:none !important;
+}
+
 .news{
   height:140px;
   position:fixed;
   top:50%;
-  margin-top:-70px;
+  margin-top:-100px;
 }
 
-.news dl{
-  width: 300px;
+.news ul{
+  width: 350px;
   margin:0;
   padding:0;
   list-style:none;
@@ -15,20 +24,28 @@
   overflow:hidden;
 }
 
-.news dt{
+.news li{
   padding:5px 10px;
   margin-right:20px;
   float:left;
   clear:both;
+  transition: margin-left 0.6s ease;
 }
 
-.news dd{
-  padding:5px 10px;
-  padding-left:45px;
+.news li:hover{
+  cursor:pointer;
+  margin-left:15px;
 }
 
-.news li.last{
+.news li a{
+  color:#000;
+  text-decoration:none;
 }
+
+.news li a:hover{
+  color:#666;
+}
+
 .footer{
   position:fixed;
   bottom:0;

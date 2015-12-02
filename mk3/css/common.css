@@ -59,9 +59,8 @@ html,body{
 }
 
 .background{
-  z-index:-1;
-  padding-top:50px;
   position:fixed;
+  width:100%;
 }
 
 .mainContents{
