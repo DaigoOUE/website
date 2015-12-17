@@ -37,12 +37,12 @@
   margin-left:15px;
 }
 
-.news li a{
+.news a{
   color:#000;
   text-decoration:none;
 }
 
-.news li a:hover{
+.news a:hover{
   color:#666;
 }
 

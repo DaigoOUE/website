@@ -52,10 +52,27 @@ html,body{
   border: none;
   border-radius: 0px;
   text-decoration: none;
+
+  -webkit-transition: color 0.5s ease;
+  -moz-transition: color 0.5s ease;
+  -ms-transition: color 0.5s ease;
+  transition: color 0.5s ease;
 }
 
 .menu li.last{
   padding-right:40px;
+}
+
+.menu li#home:hover{
+  color:#c33;
+}
+
+.menu li#works:hover{
+  color:#383;
+}
+
+.menu li#blog:hover{
+  color:#33c;
 }
 
 .background{
@@ -110,6 +127,21 @@ html,body{
 
 .sns li.last{
  padding-right:40px;
+}
+
+.sns a{
+  -webkit-transition: opacity 0.6s ease;
+  -moz-transition: opacity 0.6s ease;
+  -ms-transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease;
+}
+
+.sns a:hover{
+  opacity: .6;
+  -webkit-opacity: .6;
+  -moz-opacity: .6;
+  filter: alpha(opacity=60);  /* IE lt 6 */
+  -ms-filter: "alpha(opacity=60)"; /* IE 6 */
 }
 
 .cssclear{

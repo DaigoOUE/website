@@ -24,6 +24,7 @@
 .bx-wrapper img {
   width: 1380px;
   min-width:100%;
+  min-height:100%;
 	display: block;
 }
 
