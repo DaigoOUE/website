@@ -28,18 +28,20 @@
     <div class="container">
       <div class="background">
         <ul class="bxslider">
-          <li><canvas datasrc="src/bubble.pjs"></canvas></li>
-          <li><canvas datasrc="src/tetris.pjs"></canvas></li>
-          <li><img src="./images/slide/img03.jpeg"></li>
+          <li><img src="./images/slide/name_logo.png"></li> <!--slide-index:0-->
+          <li><canvas datasrc="src/bubble.pjs"></canvas></li> <!--slide-index:1-->
+          <li><canvas datasrc="src/tetris.pjs"></canvas></li> <!--slide-index:2-->
+          <li><img src="./images/slide/koyo.jpg"></li> <!--slide-index:3-->
+          <li><img src="./images/slide/img03.jpeg"></li> <!--slide-index:4-->
         </ul>
       </div>
       <div class="mainContents">
         <div class="news">
           <ul id="bx-pager">
-            <a href=""><li>2015.12.00 &nbsp &nbsp &nbsp test</li></a>
-            <a href=""><li>2015.12.00 &nbsp &nbsp &nbsp test</li></a>
-            <a data-slide-index="2" href=""><li>2015.12.00 &nbsp &nbsp &nbsp test</li></a>
-            <a data-slide-index="1" href=""><li>2015.12.00 &nbsp &nbsp &nbsp test</li></a>
+            <a data-slide-index="4" href=""><li>2015.12.21 &nbsp &nbsp &nbsp worksに写真を1枚追加</li></a>
+            <a data-slide-index="3" href=""><li>2015.12.00 &nbsp &nbsp &nbsp worksに写真を1枚追加</li></a>
+            <a data-slide-index="2" href=""><li>2015.12.01 &nbsp &nbsp &nbsp worksにTetris.pdeを追加</li></a>
+            <a data-slide-index="1" href=""><li>2015.12.01 &nbsp &nbsp &nbsp worksにBubble.pdeを追加</li></a>
             <a data-slide-index="0" href=""><li class="last">2015.11.30 &nbsp &nbsp &nbsp ホームページを公開</li></a> 
           </ul>
         </div> 
@@ -58,7 +60,7 @@
     <script type="text/javascript">
 $(document).ready(function(){
   $('.bxslider').bxSlider({
-    mode: 'fade',
+    mode: 'vertical',
     auto: false,
     pagerCustom: '#bx-pager'
   });
