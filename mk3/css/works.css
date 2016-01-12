@@ -1,0 +1,45 @@
+.imageContainer{
+  float:left;
+  min-width: 300px;
+  width:40%;
+  background-color:#000;
+  margin-bottom:5%
+}
+
+.left{
+  margin-right: 5%;
+}
+
+.Contents{
+}
+
+.imageContainer img{
+  min-width: 294px;
+  width: 98%;
+  margin-left:1%;
+  padding:0;
+  margin-bottom:0;
+}
+
+.title{
+  width: 415px;
+  padding-bottom:45px;
+  margin-top:-50px;
+  padding-top:50px;
+}
+
+h1.works{
+  font-size:69px;
+  padding:0;
+  margin:0;
+}
+
+.description{
+}
+
+.ImgTitle{
+  font-weight:bold;
+  color:#FFF;
+  margin-left:1%;
+}
+

@@ -1,0 +1,266 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cycling | works - Daigo OUE</title>
+    <meta name="keywords" content="Daigo OUE,daigooue,OUE,Daigo,daigo,DaigoOUE,processing.proce55ing,programming" />
+    <meta name="description" content="Daigo OUEのホームページです。" />
+    <meta http-equiv="Content-Language" content="ja" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <link href="../css/works.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="../../js/processing.min.js"></script>
+    <script>
+      window.onload = function(){
+        var canvas = document.getElementsByTagName('canvas')[0];
+        var codeElm = document.getElementById('processing-code');
+        var code = codeElm.textContent || codeElm.innerText;
+        new Processing(canvas, code);
+      };
+    </script>
+    <script id="processing-code" type="application/processing">
+      void setup() {
+        size(800, 600);
+        smooth();
+      }
+
+      float t = 0;
+
+      //length of leg
+      float l1 = 150;
+      float l2 = 100;
+
+      //rotation speed of pedal
+      float omega = 2;
+      int gear = 2;
+      int additional = 0;
+      int clicked = 0;
+
+      void draw() {
+        size(800, 600);
+        background(25,15,52);
+        if(clicked == 0){
+          fill(255,255,0);
+          textSize(32);
+          text("Click on this canvas to play!",width-450,40);
+        }
+        textSize(15);
+        pushMatrix();
+        translate(width/2, height/2);
+
+        /****calcutation****/
+        float a = 25+25*cos(radians(omega*t));
+        float b = 85+25*sin(radians(omega*t));
+        float A = pow(a, 2)+pow(b, 2)+pow(l1/2, 2)-pow(l2/2, 2);
+        float x = (a*A+sqrt(pow(a*A, 2)-(pow(a, 2)+pow(b, 2))*(pow(A, 2)-pow(b*l1, 2))))/(2*(pow(a, 2)+pow(b, 2)));
+        float y = -a*x/b + A/(2*b);
+
+        float a2 = 25+25*cos(radians(omega*t)+PI);
+        float b2 = 85+25*sin(radians(omega*t)+PI);
+        float A2 = pow(a2, 2)+pow(b2, 2)+pow(l1/2, 2)-pow(l2/2, 2);
+        float x2 = (a2*A2+sqrt(pow(a2*A2, 2)-(pow(a2, 2)+pow(b2, 2))*(pow(A2, 2)-pow(b2*l1, 2))))/(2*(pow(a2, 2)+pow(b2, 2)));
+        float y2 = -a2*x2/b2 + A2/(2*b2);
+
+        /****additional line****/
+        if (additional == 1 || additional == 2) {
+          stroke(255, 125);
+          strokeWeight(2);
+          noFill();
+          point(25, 85);
+          ellipse(25, 85, 50, 50);
+          stroke(255, 0, 204, 125);
+          point(0, 0);
+          ellipse(0, 0, l1, l1);
+          stroke(151, 255, 0, 125);
+          point(a, b);
+          ellipse(a, b, l2, l2);
+          stroke(0, 204, 255, 125);
+          ellipse(a2, b2, l2, l2);
+          point(a2, b2);
+          stroke(151, 151, 0, 125);
+          for (int i = -width/2; i < width/2; ++i) {
+            float j = -a*i/b + A/(2*b);
+            line(i-1, j+a/b, i, j);
+            float j2 = -a2*i/b2 + A2/(2*b2);
+            line(i-1, j2+a2/b2, i, j2);
+          }
+        }
+        if (additional == 0 || additional == 2) {
+          /****man****/
+          stroke(255);
+          strokeWeight(4);
+          noFill();
+          //body
+          line(0, 0, cos(-PI/3)*(l1+30)/2, sin(-PI/3)*(l1+30)/2);
+          //head
+          ellipse(cos(-PI/3)*(l1+60+30)/2, sin(-PI/3)*(l1+60+30)/2, 60, 60);
+          //arm
+          line(cos(-PI/3)*(l1)/2, sin(-PI/3)*(l1)/2, 116, -24);
+          //leg1
+          line(x, y, 0, 0);
+          line(x, y, a, b);
+          //leg2
+          line(x2, y2, 0, 0);
+          line(x2, y2, a2, b2);
+
+          /****bicycle****/
+          //frame
+          stroke(255);
+          strokeWeight(2);
+          noFill();
+          ellipse(25, 85, 50, 50);
+          line(-90, 85, 25, 85);
+          line(0, 0, 25, 85);
+          line(-90, 85, 0, 0);
+          line(0, 0, 120, -15);
+          line(25, 85, 120, -15);
+          line(160, 85, 116, -24);
+          //pedal1
+          line(a-5, b, a+5, b);
+          line(a, b, 25, 85);
+          //pedal2
+          line(a2-5, b2, a2+5, b2);
+          line(a2, b2, 25, 85);
+          //tire1
+          strokeWeight(6);
+          ellipse(-90, 85, 150, 150);
+          strokeWeight(1);
+          for (int i = 0; i < 11; ++i) {
+            float theta = TWO_PI*i/11;
+            line(-90, 85, -90+75*cos(radians(0.5*gear*omega*t)+theta), 85+75*sin(radians(0.5*gear*omega*t)+theta));
+          }
+          //tire2
+          strokeWeight(6);
+          ellipse(160, 85, 150, 150);
+          strokeWeight(1);
+          for (int i = 0; i < 11; ++i) {
+            float theta = TWO_PI*i/11;
+            line(160, 85, 160+75*cos(radians(0.5*gear*omega*t)+theta), 85+75*sin(radians(0.5*gear*omega*t)+theta));
+          }
+        }
+
+        popMatrix();
+        ++t;
+
+        /****data****/
+        //parameter
+        if (additional == 0 || additional == 2) {
+          fill(255);
+          if (key == CODED && keyPressed) {
+            if (keyCode == UP) {
+              fill(255, 0, 0);
+              } else if (keyCode == DOWN) {
+              fill(0, 0, 255);
+            }
+          }
+          text("Power: " + omega, 15, 25);
+          fill(255);
+          if (key == CODED && keyPressed) {
+            if (keyCode == RIGHT) {
+              fill(255, 0, 0);
+              } else if (keyCode == LEFT) {
+              fill(0, 0, 255);
+            }
+          }
+          text("Gear: " + gear, 15, 40);
+        }
+
+        keyboard();
+      }
+
+      void keyPressed() {
+        if (key == CODED) {
+          if (keyCode == RIGHT) {
+            if (gear < 6) {
+              ++gear;
+            }
+            } else if (keyCode == LEFT) {
+            if (gear > 1) {
+              --gear;
+            }
+            } else if (keyCode == UP) {
+            omega += 0.5;
+            } else if (keyCode ==DOWN) {
+            if (omega > 0) {
+              omega -= 0.5;
+            }
+          }
+        }
+        if (key ==' ') {
+          additional = (additional + 1)%3;
+        }
+      }
+
+      void mouseClicked(){
+        ++clicked;
+      }
+
+      void keyboard() {
+        rectMode(CENTER);
+        noStroke();
+        fill(255);
+        if (key == CODED && keyPressed) {
+          if (keyCode == UP) {
+            fill(255, 0, 0);
+          }
+        }
+        rect(width-100, height-50, 40, 20);
+        fill(255);
+        if (key == CODED && keyPressed) {
+          if (keyCode == LEFT) {
+            fill(0, 0, 255);
+          }
+        }
+        rect(width-150, height-20, 40, 20);
+        fill(255);
+        if (key == CODED && keyPressed) {
+          if (keyCode == DOWN) {
+            fill(0, 0, 255);
+          }
+        }
+        rect(width-100, height-20, 40, 20);
+        fill(255);
+        if (key == CODED && keyPressed) {
+          if (keyCode == RIGHT) {
+            fill(255, 0, 0);
+          }
+        }
+        rect(width-50, height-20, 40, 20);
+        fill(0);
+        triangle(width-100, height-55, width-104, height-47.5, width-96, height-47.5);
+        triangle(width-155, height-20, width-147.5, height-24, width-147.5, height-16);
+        triangle(width-100, height-15, width-104, height-22.5, width-96, height-22.5);
+        triangle(width-45, height-20, width-52.5, height-24, width-52.5, height-16);
+      }
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-63119885-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+  </head>
+  <body>
+    <div class="contents">
+      <h1>Cycling</h1>
+      <canvas width="800" height="600"></canvas>
+      <div class="caption">
+        <h2>自転車に乗る人。</h2>
+        <ul>
+          <li>キーボードの上下キーで漕ぐ速さを変えることができます。</li>
+          <li>キーボードの左右キーでギアを変えることができます。</li>
+          <li>スペースキーを何回か押してみると...?</li>
+          <li>高校2年生で習う簡単な数学。2つの円の共有点を求める問題。</li>
+        </ul>
+      </span>
+      <center>
+        <p><a href="../../index.html">Back to Home</a></p>
+      </center>
+    </div>
+  </body>
+</html>
