@@ -13,7 +13,7 @@
     <!--[if IE]><script src="js/excanvas.js" type="text/javascript" charset="utf-8"></script><![endif]-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
-    <script src="LoadManager.js"></script>
+    <script src="./js/LoadManager.js"></script>
     <script>
 function init() {
   
@@ -34,7 +34,6 @@ function init() {
 
   // 読み込み完了
   manager.onComplete = function(event){
-    alert("読み込み完了")
   }
   manager.start();
 }
@@ -68,7 +67,7 @@ $(function(){
     var url_sp = url.split("?id=");
     var hash   = '#' + url_sp[url_sp.length - 1];
     var tgt    = $(hash);
-    var pos    = tgt.offset().top - 調整値（数値）;
+    var pos    = tgt.offset().top - 50;
     $("html, body").animate({scrollTop:pos}, 400, "swing");
   }
 });
@@ -165,7 +164,7 @@ ga('send', 'pageview');
       <div class="copyright">©Daigo OUE. All Rights Reserved.</div>
       <div class="sns">
         <ul>
-          <li class="last"><a href="https://www.tumblr.com/blog/daigooue"><img src="./images/tumblr.png" width="20px" /></a></li>
+          <li class="last"><a href="http://daigooue.tumblr.com"><img src="./images/tumblr.png" width="20px" /></a></li>
           <li><a href="https://www.facebook.com/oue.daigo"><img src="./images/facebook.png" width="20px" /></a></li>
           <li><a href="https://twitter.com/q9ac"><img src="./images/twitter.png" width="20px" /></a></li>
         </ul>
