@@ -3,22 +3,23 @@
   min-width: 300px;
   width:40%;
   background-color:#000;
-  margin-bottom:5%
-}
-
-.left{
+  margin-bottom:5%;
   margin-right: 5%;
 }
 
-.Contents{
+.left{
 }
 
-.imageContainer img{
+.Contents{
   min-width: 294px;
   width: 98%;
   margin-left:1%;
   padding:0;
   margin-bottom:0;
+}
+
+.imageContainer img{
+  width:100%;
 }
 
 .title{
