@@ -1,8 +1,9 @@
 html,body{
+  background:#2a2a2a;
   margin: 0;
   padding: 0;
   font-size: 15px;
-  color:#000;
+  color:#fff;
   font-family: "arial",Helvetica,sans-serif;
   line-height: 1.62;
 }

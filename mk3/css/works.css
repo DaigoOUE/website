@@ -1,8 +1,19 @@
 .imageContainer{
   float:left;
-  min-width: 300px;
+  min-width: 327px;
   width:40%;
-  background-color:#000;
+  color: #aaa;
+  letter-spacing: 0;
+  border: none;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  text-decoration: none;
+  background:  -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 120, color-stop(1.00, #000), color-stop(0.53, #303030));
+  background:  -webkit-radial-gradient(50% 50%, circle, #303030 53%, #000 100%);
+  background:  -moz-radial-gradient(50% 50%, circle, #303030 53%, #000 100%);
+  background:  -o-radial-gradient(50% 50%, circle, #303030 53%, #000 100%);
+  background:  -ms-radial-gradient(50% 50%, circle, #303030 53%, #000 100%);
+  background:  radial-gradient(50% 50%, circle, #303030 53%, #000 100%);
   margin-bottom:5%;
   margin-right: 5%;
 }
@@ -11,15 +22,16 @@
 }
 
 .Contents{
-  min-width: 294px;
-  width: 98%;
-  margin-left:1%;
-  padding:0;
-  margin-bottom:0;
+ 
 }
 
 .imageContainer img{
-  width:100%;
+  min-width: 294px;
+  width: 90%;
+  margin-top:0.2%;
+  margin-left:5%;
+  margin-bottom:4%;
+  padding:0;
 }
 
 .title{
@@ -27,6 +39,8 @@
   padding-bottom:45px;
   margin-top:-50px;
   padding-top:50px;
+  color:#000;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.07); 
 }
 
 h1.works{
@@ -40,7 +54,14 @@ h1.works{
 
 .ImgTitle{
   font-weight:bold;
-  color:#FFF;
-  margin-left:1%;
+  color:#aaa;
+  margin-top:0.2%;
+  margin-left:5%;
 }
 
+#main{
+  display: none;
+}
+
+#load{
+}

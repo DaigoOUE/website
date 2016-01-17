@@ -13,29 +13,10 @@
     <!--[if IE]><script src="js/excanvas.js" type="text/javascript" charset="utf-8"></script><![endif]-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
-    <script src="./js/LoadManager.js"></script>
-    <script>
-function init() {
-  
-  var manager = new LoadManager();
-  // 読み込みたい画像を登録
-  manager.add("./images/works/graffiti/gun.png");
-  manager.add("./images/works/graffiti/pika.png");
-  manager.add("./images/works/processing/bubble.png");
-  manager.add("./images/works/processing/tetris.png");
-  manager.add("./images/works/photo/note.jpeg");
-  manager.add("./images/works/photo/koyo.jpg");
-
-  // 読み込み進行中
-  manager.onProgress = function (event) {
-    // パーセンテージが取得できる
-    console.log(manager.getPercent());
-  };
-
-  // 読み込み完了
-  manager.onComplete = function(event){
-  }
-  manager.start();
+    <script type="text/javascript">
+window.onload = function() {
+  document.getElementById('load').style.display = 'none';
+  document.getElementById('main').style.display = 'block';
 }
     </script>
     <script>
@@ -82,7 +63,7 @@ ga('create', 'UA-72371836-1', 'auto');
 ga('send', 'pageview');
     </script>
   </head>
-  <body onload="init();">
+  <body>
     <div class="header">
       <div class="logo">
         <p>Daigo OUE</p>
@@ -95,7 +76,8 @@ ga('send', 'pageview');
         </ul>
       </div>
     </div>
-    <div class="container">
+    <div id="load" style="text-align:center">now loading...</div>
+    <div class="container" id="main">
       <div class="mainContents">
         <div class="title" id="keynote">
           <h1 class="works">Keynote</h1>
@@ -159,17 +141,18 @@ ga('send', 'pageview');
         </div>
         <div class="cssclear"></div>
       </div>
-    </div>
-    <div class="footer">
-      <div class="copyright">©Daigo OUE. All Rights Reserved.</div>
-      <div class="sns">
-        <ul>
-          <li class="last"><a href="http://daigooue.tumblr.com"><img src="./images/tumblr.png" width="20px" /></a></li>
-          <li><a href="https://www.facebook.com/oue.daigo"><img src="./images/facebook.png" width="20px" /></a></li>
-          <li><a href="https://twitter.com/q9ac"><img src="./images/twitter.png" width="20px" /></a></li>
-        </ul>
+      <div class="footer">
+        <div class="copyright">©Daigo OUE. All Rights Reserved.</div>
+        <div class="sns">
+          <ul>
+            <li class="last"><a href="http://daigooue.tumblr.com"><img src="./images/tumblr.png" width="20px" /></a></li>
+            <li><a href="https://www.facebook.com/oue.daigo"><img src="./images/facebook.png" width="20px" /></a></li>
+            <li><a href="https://twitter.com/q9ac"><img src="./images/twitter.png" width="20px" /></a></li>
+          </ul>
+        </div>
       </div>
     </div>
+
     <script type="text/javascript">
 $(document).ready(function(){
   $('.bxslider').bxSlider({
