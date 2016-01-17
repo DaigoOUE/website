@@ -18,7 +18,7 @@ Field field = new Field();
 
 void draw() {
   size(window.innerWidth, window.innerHeight);
-  background(100);
+  background(29*100/255);
   for (int i = 0; i < bubble.length; ++i) {
     bubble[i].run(field);
   }
@@ -121,7 +121,7 @@ class Bubble {
 
   void display() {
     noStroke();
-    fill(0, 5+20*x[1]/height);
+    fill(255, 5+20*x[1]/height);
     for (int i = 0; i < 3; ++i) {
       ellipse(x[0], x[1], r, r);
     }

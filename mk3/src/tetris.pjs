@@ -11,7 +11,7 @@ void setup() {
 Block[] block = new Block[21];
 float time = 0;
 void draw() {
-  background(255);
+  background(29);
   translate(width/2, height/2, 0);
   camera(0, -200, 600, 0, 0, 0, 0, 1, 0);
   rotateY(radians(time/2));

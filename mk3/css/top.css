@@ -15,7 +15,7 @@
 }
 
 .news ul{
-  width: 350px;
+  width: 450px;
   margin:0;
   padding:0;
   list-style:none;
@@ -38,12 +38,12 @@
 }
 
 .news a{
-  color:#000;
+  color:#fff;
   text-decoration:none;
 }
 
 .news a:hover{
-  color:#666;
+  color:rgb(105,105,105);
 }
 
 .footer{

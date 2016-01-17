@@ -1,10 +1,15 @@
+@font-face {
+  font-family: Satellite;  
+  src: url(font/Satellite.otf);  
+}
+
 html,body{
   background:#1D1D1D;
   margin: 0;
   padding: 0;
   font-size: 15px;
   color:#fff;
-  font-family: "arial",Helvetica,sans-serif;
+  font-family: Satellite; 
   line-height: 1.62;
 }
 
@@ -14,13 +19,7 @@ html,body{
   height: 50px;
   position: fixed;
   top:0;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1.00, #e9e9e9), color-stop(0.00, #ababab));
-  background: -webkit-linear-gradient(#ababab, #e9e9e9);
-  background: -moz-linear-gradient(#ababab, #e9e9e9);
-  background: -o-linear-gradient(#ababab, #e9e9e9);
-  background: -ms-linear-gradient(#ababab, #e9e9e9);
-  background: linear-gradient(#ababab, #e9e9e9);
-  box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.9);
+  background: rgb(20, 20, 20);
 }
 
 .logo{
@@ -29,8 +28,7 @@ html,body{
   margin:0;
   padding-left:40px;
   font-weight: bold;
-  color: #000;
-  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.5);
+  color: #fff;
   letter-spacing: 0;
 }
 
@@ -47,10 +45,9 @@ html,body{
   float:right;
   display: inline-block;
   font-weight: bold;
-  color: #000;
-  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.1), 0 1px 1px rgba(255, 255, 255, 0.5);
+  color: rgb(169,169,169);
   letter-spacing: 0;
-  border: none;
+  border:none;
   border-radius: 0px;
   text-decoration: none;
 
@@ -64,16 +61,8 @@ html,body{
   padding-right:40px;
 }
 
-.menu li#home:hover{
-  color:#c33;
-}
-
-.menu li#works:hover{
-  color:#383;
-}
-
-.menu li#blog:hover{
-  color:#33c;
+.menu li:hover{
+  color:rgb(105,105,105);
 }
 
 .background{
@@ -95,15 +84,8 @@ html,body{
   height:80px;
   position:relative;
   color: #ffffff;
-  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(255, 255, 255, 0.5);
   letter-spacing: 0;
-  box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #666), color-stop(1.00, #111));
-  background: -webkit-linear-gradient(#666, #111);
-  background: -moz-linear-gradient(#666, #111);
-  background: -o-linear-gradient(#666, #111);
-  background: -ms-linear-gradient(#666, #111);
-  background: linear-gradient(#666, #111);
+  background: rgb(20,20,20);
 }
 
 .copyright{
