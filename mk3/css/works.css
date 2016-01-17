@@ -22,7 +22,6 @@
 }
 
 .Contents{
- 
 }
 
 .imageContainer img{
@@ -39,9 +38,12 @@
   padding-bottom:45px;
   margin-top:-50px;
   padding-top:50px;
-  color:#000;
-  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.07); 
+  color: rgba(176,176,176, 0.4);
+  text-shadow: 1px 4px 2px #272727, 0 0 0 #000, 1px 4px 2px #272727;
 }
+
+::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
+::selection { background: #5af; color: #fff; text-shadow: none; }
 
 h1.works{
   font-size:69px;
@@ -50,6 +52,7 @@ h1.works{
 }
 
 .description{
+  font-weight: bold;
 }
 
 .ImgTitle{
