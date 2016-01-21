@@ -1,7 +1,12 @@
 @font-face {
-  font-family: Satellite;  
-  src: url(/font/Satellite.otf);  
+  font-family: satellite;  
+  src: url(/font/Satellite.otf);
 }
+@font-face {
+  font-family: lombok;  
+  src: url(/font/Lombok.otf);  
+}
+
 
 html,body{
   background:#1D1D1D;
@@ -9,8 +14,12 @@ html,body{
   padding: 0;
   font-size: 15px;
   color:#fff;
-  font-family: Satellite; 
+  font-family: satellite; 
   line-height: 1.62;
+}
+
+.sign{
+  font-family:lombok;
 }
 
 .header{
@@ -27,6 +36,7 @@ html,body{
   top:0;
   margin:0;
   padding-left:40px;
+  font-family: lombok;  
   font-weight: bold;
   color: #fff;
   letter-spacing: 0;
