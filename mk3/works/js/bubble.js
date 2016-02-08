@@ -13,7 +13,7 @@ function setup() {
 
 function draw() {
   createCanvas(window.innerWidth, window.innerHeight);
-  background(205);
+  background(255);
   for (var i = 0; i < bubble.length; ++i) {
     bubble[i].run();
   }

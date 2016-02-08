@@ -33,6 +33,10 @@
   padding:0;
 }
 
+.imageContainer a{
+  text-decoration:none;
+}
+
 .title{
   width: 415px;
   padding-bottom:45px;
