@@ -1,10 +1,10 @@
 @font-face {
   font-family: satellite;  
-  src: url(/font/Satellite.otf);
+  src: url(../font/Satellite.otf);
 }
 @font-face {
   font-family: lombok;  
-  src: url(/font/Lombok.otf);  
+  src: url(../font/Lombok.otf);  
 }
 
 

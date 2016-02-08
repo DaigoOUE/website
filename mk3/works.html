@@ -8,11 +8,24 @@
     <link rel="stylesheet" href="css/jquery.bxslider.css"/>
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/works.css">
+    <link rel="stylesheet" type="text/css" href="css/colorbox.css">
     <title>Daigo OUE</title>
     <script src="js/processing.min.js"></script>
     <!--[if IE]><script src="js/excanvas.js" type="text/javascript" charset="utf-8"></script><![endif]-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/jquery.colorbox-min.js"></script>
+    <script>
+      $(function() {
+        $(".iframe").colorbox({
+          iframe:true,
+          width:"80%",
+          height:"80%",
+          opacity: 0.7
+        });
+      });
+    </script>
+
     <script type="text/javascript">
 window.onload = function() {
   document.getElementById('load').style.display = 'none';
@@ -62,7 +75,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-72371836-1', 'auto');
 ga('send', 'pageview');
     </script>
-  </head>
+      </head>
   <body>
     <div class="header">
       <div class="logo">
@@ -107,16 +120,18 @@ ga('send', 'pageview');
           </span>
         </div>
         <div class="imageContainer left">
-          <div class="ImgTitle">Bubble.pde</div>
-          <div class="Contents">
-            <img src="./images/works/processing/bubble.png" />
-          </div>
+          <a class="iframe" href="./works/bubble.html">
+            <div class="ImgTitle">Bubble.pde</div>
+            <div class="Contents">
+              <img src="./images/works/processing/bubble.png" />
+            </div>
+          </a>
         </div>
         <div class="imageContainer">
-          <div class="ImgTitle">Tetris.pde</div>
-          <div class="Contents">
-            <img src="./images/works/processing/tetris.png" />
-          </div>
+            <div class="ImgTitle">Tetris.pde</div>
+            <div class="Contents">
+              <img src="./images/works/processing/tetris.png" />
+            </div>
         </div>
         <div class="cssclear"></div>
         <div class="imageContainer left">
