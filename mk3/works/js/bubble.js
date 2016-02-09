@@ -13,7 +13,7 @@ function setup() {
 
 function draw() {
   createCanvas(window.innerWidth, window.innerHeight);
-  background(255);
+  background(29);
   for (var i = 0; i < bubble.length; ++i) {
     bubble[i].run();
   }
@@ -104,7 +104,7 @@ function Bubble() {
 
   this.display = function() {
     noStroke();
-    fill(0, 5+20*this.y/height);
+    fill(255, 5+20*this.y/height);
     for (var i = 0; i < 3; ++i) {
       ellipse(this.x, this.y, this.r, this.r);
     }

@@ -1,0 +1,191 @@
+void setup() {
+  size(window.innerWidth, window.innerHeight, P3D);
+  for (int i = 0; i < block.length; ++i) {
+    float[] a = {
+      10*((int)(random(-150, 150)/10)), 10*((int)(random(-50, 150)/10)), 10*i-100
+    };
+    block[i] = new Block(a, i%7);
+  }
+}
+
+Block[] block = new Block[21];
+float time = 0;
+void draw() {
+  background(29);
+  translate(width/2, height/2, 0);
+  camera(0, -200, 600, 0, 0, 0, 0, 1, 0);
+  rotateY(radians(time/2));
+  noStroke();
+  fill(0,0,102);
+  beginShape();
+  vertex(200, 235, 200);
+  vertex(-200, 235, 200);
+  vertex(-200, 235, -200);
+  vertex(200, 235, -200);
+  endShape();
+  for (int i = 0; i < block.length; ++i) {
+    block[i].display();
+  }
+  update();
+}
+
+int s = 0;
+int sbefore = 0;
+void update() {
+  sbefore = s;
+  s = second();
+  if (s != sbefore) {
+    for (int i = 0; i < block.length; ++i) {
+      block[i].fall();
+    }
+  }
+  ++time;
+}
+
+int current = 0;
+void keyReleased() {
+  block[current].move();
+}
+
+class Block {
+  float[] x = new float[3];
+  int type;
+  color c;
+  float rotation = 0;
+  float rotateTime = 0;
+
+  Block(float[] a, int b) {
+    x = a;
+    type = b;
+    switch (type) {
+      case 0:
+        c = #FF0000;
+        break;
+
+      case 1:
+        c = #FF8000;
+        break;
+
+      case 2:
+        c = #FFFF00;
+        break;
+
+      case 3:
+        c = #009900;
+        break;
+
+      case 4:
+        c = #0000FF;
+        break;
+
+      case 5:
+        c = #0000CC;
+        break;
+
+      case 6:
+        c = #6600CC;
+        break;
+    }
+  }
+  void display() {
+    pushMatrix();
+    translate(x[0], x[1], x[2]);
+    rotateZ(rotation);
+    strokeWeight(1);
+    stroke(204);
+    fill(c);
+    box(10);
+    switch (type) {
+      case 0:
+        translate(0, -10, 0);
+        box(10);
+        translate(-10, 0, 0);
+        box(10);
+        translate(20, 10, 0);
+        box(10);
+        break;
+
+      case 1:
+        translate(10, 0, 0);
+        box(10);
+        translate(10, 0, 0);
+        box(10);
+        translate(0, -10, 0);
+        box(10);
+        break;
+
+      case 2:
+        translate(0, -10, 0);
+        box(10);
+        translate(10, 0, 0);
+        box(10);
+        translate(0, 10, 0);
+        box(10);
+        break;
+
+      case 3:
+        translate(10, 0, 0);
+        box(10);
+        translate(0, -10, 0);
+        box(10);
+        translate(10, 0, 0);
+        box(10);
+        break;
+
+      case 4:
+        translate(10, 0, 0);
+        box(10);
+        translate(10, 0, 0);
+        box(10);
+        translate(-20, -10, 0);
+        box(10);
+        break; 
+
+      case 5:
+        translate(10, 0, 0);
+        box(10);
+        translate(10, 0, 0);
+        box(10);
+        translate(10, 0, 0);
+        box(10);
+        break;
+      case 6:
+        translate(0, -10, 0);
+        box(10);
+        translate(-10, 0, 0);
+        box(10);
+        translate(20, 0, 0);
+        box(10);
+        break;
+    }
+    popMatrix();
+  }
+  void move() {
+    if (key == CODED) {
+      if (keyCode == UP) {
+        x[2] -= 10;
+      } else if (keyCode == DOWN) {
+        x[2] += 10;
+      } else if (keyCode == RIGHT) {
+        x[0] += 10;
+      } else if (keyCode == LEFT) {
+        x[0] -= 10;
+      }
+    }
+    if (key == ' ') {
+      rotation += PI/2;
+    }
+  }
+  void fall() {
+    x[1] += 10;
+    if (((x[1] == 80)||(x[1] == 160))&&(random(0, 1)>0.5)) {
+      rotation += PI/2;
+    }
+    if (x[1] == 200) {
+      x[0] = 10*((int)(random(-150, 150)/10));
+      x[1] = -50;
+      x[2] = 10*((int)(random(-150, 150)/10));
+      rotateTime = 0;
+    }
+  }
+}
