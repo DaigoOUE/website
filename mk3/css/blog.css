@@ -5,8 +5,13 @@
 
 .article p{
   width:90%;
-  padding-left:5%;
+  padding: 0 5% 1em 5%;
   color:#aaa;
+  border-bottom:1px solid #666;
+}
+
+.article a{
+  color: #a5a5e4;
 }
 
 .title{
@@ -36,5 +41,4 @@
   font-size:1em;
   color:rgba(176,176,176, 0.4)
 }
-
 
