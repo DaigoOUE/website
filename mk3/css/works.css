@@ -1,3 +1,12 @@
+.mainContents{
+  border-top: #4d4d4d solid 1px;
+}
+
+.footer{
+  position: fixed;
+  bottom: 0;
+}
+
 .imageContainer{
   float:left;
   min-width: 220px;
