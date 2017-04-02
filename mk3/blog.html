@@ -99,12 +99,10 @@ $hamburger.on("click", function(e) {
   // Do something else, like open/close menu
 });
     </script>
-    <script type="text/javascript">
-jQuery(function($){
-  $('.hamburger').click(function(){
-    $('.navigation').toggleClass('expandNav')
-  })
-})
+    <script>
+$('.hamburger').on("click", function() {
+  $('.navigation').slideToggle(150);
+});
     </script>
   </body>
 </html>
