@@ -110,7 +110,10 @@ html,body{
 /*----hamburger setting END----*/
 
 .navigation{
-  padding-top: 50px;
+  width: 100%;
+  background: rgba(29, 29, 29, 0.95);
+  position: fixed;
+  top: 50px;
   z-index: 1;
   display: none;
 }
@@ -199,10 +202,11 @@ html,body{
 @media screen and (max-width: 480px){
   .header{
     text-align:center;
+    position: fixed;
   }
   .logo{
     padding: 0;
-    margin-left:-2.5em;
+    margin-left: -40.85px;
     display: inline-block;
   }
   .menu {
