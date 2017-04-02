@@ -42,6 +42,11 @@ html,body{
   letter-spacing: 0;
 }
 
+.logo a{
+  text-decoration: none;
+  color: #fff;
+}
+
 .menu ul{
   margin:0;
   padding:0;
@@ -105,6 +110,7 @@ html,body{
   left:40px;
 }
 
+
 .sns ul{
  margin:0;
  padding:0;
@@ -139,5 +145,41 @@ html,body{
 
 .cssclear{
   clear:both;
+}
+
+
+/*HEADER responsive*/
+@media screen and (max-width : 480px){
+  .header{
+    text-align:center;
+  }
+  .logo{
+    padding: 0;
+    margin-left:-2.5em;
+    display: inline-block;
+  }
+  .menu {
+    display: none;
+  }
+}
+
+
+/*FOOTER responsive*/
+@media screen and (max-width : 480px){
+  .copyright{
+    display:none;
+  }
+
+  .sns{
+    display:inline-block;
+  }
+
+  .sns li.last {
+    padding-right: 20px;
+  }
+
+  .footer{
+    text-align:center;
+  }
 }
 
