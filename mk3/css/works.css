@@ -1,6 +1,6 @@
 .imageContainer{
   float:left;
-  min-width: 327px;
+  min-width: 220px;
   width:40%;
   color: #aaa;
   letter-spacing: 0;
@@ -25,7 +25,7 @@
 }
 
 .imageContainer img{
-  min-width: 294px;
+  min-width: 200px;
   width: 90%;
   margin-top:0.2%;
   margin-left:5%;
@@ -38,7 +38,6 @@
 }
 
 .title{
-  width: 415px;
   padding-bottom:45px;
   margin-top:-50px;
   padding-top:50px;
@@ -50,7 +49,6 @@
 ::selection { background: #5af; color: #fff; text-shadow: none; }
 
 h1.works{
-  font-size:69px;
   padding:0;
   margin:0;
 }
