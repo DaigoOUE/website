@@ -109,6 +109,7 @@ html,body{
 }
 /*----hamburger setting END----*/
 
+/*----navigation with hamburger----*/
 .navigation{
   width: 100%;
   background: rgba(29, 29, 29, 0.95);
@@ -126,10 +127,15 @@ html,body{
   padding-left: 35px;
 }
 
+.navigation li{
+  padding-bottom: 1em;
+}
+
 .navigation a{
   text-decoration: none;
   color: #a9a9a9;
 }
+/*----navigation with hamburger END----*/
 
 .background{
   position:fixed;
