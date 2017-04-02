@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/jquery.bxslider.css"/>
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/top.css">
+    <link href="hamburgers/dist/hamburgers.css" rel="stylesheet">
     <title>Daigo OUE</title>
     <script src="js/processing.min.js"></script>
     <!--[if IE]><script src="js/excanvas.js" type="text/javascript" charset="utf-8"></script><![endif]-->
@@ -35,7 +36,19 @@ ga('send', 'pageview');
           <a href="index.html"><li id="home">home</li></a>
         </ul>
       </div>
+      <div class="hamburger hamburger--3dy" type="button">
+        <div class="hamburger-box">
+          <div class="hamburger-inner"></div>
+        </div>
+      </div>
     </div>
+    <div class="navigation">
+      <ul>
+        <li><a href="./index.html">home</li>
+        <li><a href="./works.html">works</li>
+        <li><a href="./blog.html">blog</a></li>
+    </div>
+
     <div class="container">
       <div class="background">
         <ul class="bxslider">
@@ -47,7 +60,7 @@ ga('send', 'pageview');
         </ul>
       </div>
       <div class="mainContents">
-        <div class="news">
+                <div class="news">
           <ul id="bx-pager">
             <a data-slide-index="4" href="works.html#photo"><li>2015.12.21 &nbsp &nbsp &nbsp "Notebook and Wine"</li></a>
             <a data-slide-index="3" href="works.html#photo"><li>2015.12.19 &nbsp &nbsp &nbsp "Autumun Leaves"</li></a>
@@ -55,9 +68,12 @@ ga('send', 'pageview');
             <a data-slide-index="1" href="works.html#processing"><li>2015.12.01 &nbsp &nbsp &nbsp "Bubble.pde"</li></a>
             <a data-slide-index="0" href=""><li class="last">2015.11.30 &nbsp &nbsp &nbsp Website was launched. </li></a> 
           </ul>
-        </div> 
+          
+        </div>
       </div>
     </div>
+    
+
     <div class="footer">
       <div class="copyright">©<span class="sign">DAIGO OUE</span>. All Rights Reserved.</div>
       <div class="sns">
@@ -77,6 +93,20 @@ $(document).ready(function(){
   });
 });
     </script>
+  <script>
+var $hamburger = $(".hamburger");
+$hamburger.on("click", function(e) {
+  $hamburger.toggleClass("is-active");
+  // Do something else, like open/close menu
+});
+  </script>
+  <script type="text/javascript">
+jQuery(function($){
+  $('.hamburger').click(function(){
+    $('.navigation').toggleClass('expandNav')
+  })
+})
+  </script>
   </body>
 </html>
 

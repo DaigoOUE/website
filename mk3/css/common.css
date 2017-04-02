@@ -80,6 +80,54 @@ html,body{
   color:rgb(105,105,105);
 }
 
+/*----hamburger setting----*/
+.hamburger{
+  display:none !important;
+  float: left;
+  padding: 16px 15px 10px 15px !important;
+}
+.hamburger--3dy.is-active .hamburger-inner::after {
+    transform: translate3d(0, -4px, 0) rotate(-45deg) !important;
+}
+.hamburger--3dy.is-active .hamburger-inner::before {
+    transform: translate3d(0, 6px, 0) rotate(45deg) !important;
+}
+.hamburger-inner::before {
+    top: -5px !important;
+}
+.hamburger-inner::after {
+    bottom: -5px !important;
+}
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 20px !important;
+  height: 2px !important;
+  border-radius: 0px !important;
+}
+.hamburger-box {
+    width: 20px !important;
+    height: 12px !important;
+}
+/*----hamburger setting----*/
+
+.navigation{
+  padding-top: 50px;
+  z-index: 1;
+  display: none;
+}
+.expandNav{
+  display: block !important;
+}
+
+.navigation ul{
+  list-style: none;
+  padding-left: 35px;
+}
+
+.navigation a{
+  text-decoration: none;
+  color: #a9a9a9;
+}
+
 .background{
   position:fixed;
   width:100%;
@@ -97,7 +145,6 @@ html,body{
   padding:0;
   width:100%;
   height:80px;
-  position:relative;
   color: #ffffff;
   letter-spacing: 0;
   background: rgb(20,20,20);
@@ -149,7 +196,7 @@ html,body{
 
 
 /*HEADER responsive*/
-@media screen and (max-width : 480px){
+@media screen and (max-width: 480px){
   .header{
     text-align:center;
   }
@@ -160,6 +207,9 @@ html,body{
   }
   .menu {
     display: none;
+  }
+  .hamburger{
+    display: inline-block !important;
   }
 }
 
