@@ -1,5 +1,10 @@
+.mainContents{
+  padding-top:40px;
+}
+
 .article{
   width:85%;
+  padding-top:50px;
 }
 
 .article p{
@@ -32,7 +37,7 @@
 
 .date {
   width: 100%;
-  padding-bottom: 4em;
+  padding-bottom: 1em;
 }
 .date h2{
   margin:0;
@@ -42,3 +47,18 @@
   float: right;
 }
 
+/*adjust the position of anchors*/
+#cv{
+  padding-top:50px;
+  margin-top:-50px;
+}
+
+#renew{
+  padding-top:50px;
+  margin-top:-50px;
+}
+
+#ntfs{
+  padding-top:50px;
+  margin-top:-50px;
+}
