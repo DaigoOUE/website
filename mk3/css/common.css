@@ -209,6 +209,7 @@ perspective: 80px; }
   color: #ffffff;
   letter-spacing: 0;
   background: rgb(20,20,20);
+  position: relative;
 }
 
 .copyright{
@@ -218,6 +219,10 @@ perspective: 80px; }
   left:40px;
 }
 
+.sns{
+  position: absolute;
+  right:0;
+}
 
 .sns ul{
  margin:0;
@@ -263,8 +268,8 @@ perspective: 80px; }
     position: fixed;
   }
   .logo{
-    padding: 0;
-    margin-left: -40.85px;
+    padding-left: 50%;
+    left: -2.5em;
     display: inline-block;
   }
   .menu {
@@ -279,19 +284,17 @@ perspective: 80px; }
 /*FOOTER responsive*/
 @media screen and (max-width : 480px){
   .copyright{
-    display:none;
+    display: none;
   }
 
   .sns{
-    display:inline-block;
+    position: absolute;
+    padding-right: 50%;
+    right: -90px;
   }
 
   .sns li.last {
     padding-right: 20px;
-  }
-
-  .footer{
-    text-align:center;
   }
 }
 
