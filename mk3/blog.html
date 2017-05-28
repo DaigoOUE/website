@@ -47,6 +47,63 @@ ga('send', 'pageview');
 
     <div class="container">
       <div class="mainContents">
+        <div class="article">
+          <div class="title">
+            <h1>How to Write to NTFS Drives on macOS sierra</h1>
+          </div>
+          <div class="cssclear"></div>
+          <p>
+            Windows guys usually use NTFS format for drives.<br />
+            The format has an advantage of writing files of the larger size than 4 GB, while in FAT32 we cannot do this.<br />
+            However, NTFS cannot be used in macOS sierra with default setting unfortunately.<br />
+            Today, I will introduce how to overcome this problem and make it possible to write files to NTFS drives on the macOS.<br />
+            To do so, we use ntfs-3g, and we need osxfuse to use ntfs-3g.<br />
+            <br />
+            &nbsp;&nbsp;Let's begin with installing osxfuse. <br />
+            Download dmg of osxfuse <a href="https://github.com/osxfuse/osxfuse/releases">here</a>, and install it.<br />
+            Run the code below to install ntfs-3g. We use <a href="https://brew.sh/">homebrew</a> for installations.<br />
+            <code>
+              brew install ntfs-3g
+            </code><br />
+            <br />
+            &nbsp;&nbsp;After the installations, we rewrite the link of "/sbin/mount_ntfs" as the following procedure.<br />
+            Firstly, we need to make SIP (System Integrity Protection) disabled for rewriting.<br />
+            In the recovery mode (keep pressing "command + R" when rebooting and you will be in the recovery mode), run the following code to disable SIP.<br />
+            <code>
+              csrutil disable
+            </code><br />
+            And reboot your mac.
+            <code><br />
+              reboot
+            </code><br />
+            Secondly, run the code below to rewrite the link of mount_ntfs.<br />
+            <code>
+              sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.original<br />
+              sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
+            </code><br />
+            If you successfully rewrite the link, enable SIP again by running the code on Terminal in recovery mode.<br />
+            <code>
+              csrutil enable
+            </code><br />
+            <br />
+            &nbsp;&nbsp;Lastly, Edit /etc/fstab with your text editer.<br />
+            In the 1<sup>st</sup> line in fstab, write<br />
+            <code>
+              LABEL="NTFS drivename" none ntfs rw,auto,nobrowse
+            </code><br />
+            <br />
+            &nbsp;&nbsp;At the next time you connect the NTFS drive to your mac,<br />
+            you no longer see the drive on the desktop but you can find it in /Volumes/.<br />
+            You can write files to the drive as usual procedures (drag&drop and so on).<br />
+            If you want, you can make the sympolic link of the drive.<br />
+            <br />
+            <br />
+            Enjoy NTFS on your mac.
+          </p>
+          <div class="date">
+            <h2>2017. 05. 29</h2>
+          </div>
+        </div>
 
         <div class="article">
           <div class="title">
