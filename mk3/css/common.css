@@ -219,10 +219,6 @@ perspective: 80px; }
   left:40px;
 }
 
-.sns{
-  position: absolute;
-  right:0;
-}
 
 .sns ul{
  margin:0;
@@ -268,8 +264,8 @@ perspective: 80px; }
     position: fixed;
   }
   .logo{
-    padding-left: 50%;
-    left: -2.5em;
+    padding: 0;
+    margin-left: -40.85px;
     display: inline-block;
   }
   .menu {
@@ -284,17 +280,19 @@ perspective: 80px; }
 /*FOOTER responsive*/
 @media screen and (max-width : 480px){
   .copyright{
-    display: none;
+    display:none;
   }
 
   .sns{
-    position: absolute;
-    padding-right: 50%;
-    right: -90px;
+    display:inline-block;
   }
 
   .sns li.last {
     padding-right: 20px;
+  }
+
+  .footer{
+    text-align:center;
   }
 }
 
