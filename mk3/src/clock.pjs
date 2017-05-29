@@ -5,6 +5,7 @@ void setup() {
   for (int i = 0; i < bball.length; ++i) {
     bball[i] = new BBall();
   }
+  frameRate(10);
   background(0);
 }
 

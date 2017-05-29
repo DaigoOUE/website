@@ -6,6 +6,7 @@ void setup() {
     };
     block[i] = new Block(a, i%7);
   }
+  frameRate(5);
 }
 
 Block[] block = new Block[21];
