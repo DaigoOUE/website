@@ -1,0 +1,47 @@
+void setup() {
+  size(window.innerWidth, window.innerHeight, P3D);
+  colorMode(RGB);
+  frameRate(20);
+}
+
+int t = 0;
+int N = 20; //number of plane composing möbius strip
+int n = 3;
+
+float r = window.innerHeight*25/500; // width of möbius strip
+float R = window.innerHeight*130/500; // radius of möbius strip
+
+void draw() {
+  background(29);
+  translate(width/2, height/2, 0);
+  camera(0, -3/5*height, height, 0, 0, 0, 0, 0, 1);
+  for (int i = 0; i < N; ++i) {
+    noStroke();
+    colorMode(HSB);
+    fill(255*i/N, 120, 255);
+
+    beginShape();
+
+    vertex(R*cos(TWO_PI*i/N)+r*cos(TWO_PI*i/N)*cos(n*TWO_PI*i/N/2+radians(t)), 
+      r*sin(n*TWO_PI*i/N/2+radians(t)), 
+      -R*sin(TWO_PI*i/N)-r*sin(TWO_PI*i/N)*cos(n*TWO_PI*i/N/2+radians(t)));
+
+    vertex(R*cos(TWO_PI*i/N)-r*cos(TWO_PI*i/N)*cos(n*TWO_PI*i/N/2+radians(t)), 
+      -r*sin(n*TWO_PI*i/N/2+radians(t)), 
+      -R*sin(TWO_PI*i/N)+r*sin(TWO_PI*i/N)*cos(n*TWO_PI*i/N/2+radians(t)));
+
+    vertex(R*cos(TWO_PI*(1+i)/N)-r*cos(TWO_PI*(1+i)/N)*cos(n*TWO_PI*(1+i)/N/2+radians(t)), 
+      -r*sin(n*TWO_PI*(1+i)/N/2+radians(t)), 
+      -R*sin(TWO_PI*(1+i)/N)+r*sin(TWO_PI*(1+i)/N)*cos(n*TWO_PI*(1+i)/N/2+radians(t)));
+
+    vertex(R*cos(TWO_PI*(1+i)/N)+r*cos(TWO_PI*(1+i)/N)*cos(n*TWO_PI*(1+i)/N/2+radians(t)), 
+      r*sin(n*TWO_PI*(1+i)/N/2+radians(t)), 
+      -R*sin(TWO_PI*(1+i)/N)-r*sin(TWO_PI*(1+i)/N)*cos(n*TWO_PI*(1+i)/N/2+radians(t)));
+
+    endShape(CLOSE);
+  }
+  t += 4;
+  if (t < 360) {
+    saveFrame("img/####.tiff");
+  }
+}
