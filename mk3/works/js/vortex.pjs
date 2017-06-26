@@ -1,0 +1,70 @@
+int num = 50;
+Arrow[] arrow = new Arrow[(int)pow(num, 2)];
+float[] x = new float[2];
+float[] u = new float[2];
+float[] origin = new float[2];
+int t = 0;
+
+void setup() {
+  size(window.innerWidth, window.innerHeight);
+  origin[0] = width/2;
+  origin[1] = height/2;
+  colorMode(HSB);
+  for (int i = 0; i < arrow.length; ++i) {
+    int tempx = i%num ;
+    int tempy = (int)(i/num);
+    x[0] = tempx*width/num + width/num/2;
+    x[1] = tempy*height/num + height/num/2;
+    u[0] = 1;
+    u[1] = 0;
+    arrow[i] = new Arrow(x, u);
+    arrow[i].scaleSet(width/num);
+  }
+}
+
+void draw() {
+  background(0);
+  float phase, h;
+  float[] tempd = new float[2];
+  color c;
+  for (int i = 0; i < arrow.length; ++i) {
+    tempd[0] = arrow[i].position[0] - origin[0];
+    tempd[1] = arrow[i].position[1] - origin[1];
+    phase = atan2(tempd[1], tempd[0]);
+    u[0] = cos(radians(t)+phase);
+    u[1] = sin(radians(t)+phase);
+    h = map(abs(radians(t)+phase+TWO_PI)%TWO_PI, 0, TWO_PI, 0, 255);
+    c = color(h, 255, 255);
+    arrow[i].colorSet(c);
+    arrow[i].directionSet(u);
+    arrow[i].display();
+  }
+  ++t;
+}
+
+class Arrow {
+  float[] position = new float[2];
+  float[] direction = new float[2];
+  float scale = 20;
+  color col = color(255);
+  Arrow(float[] x, float[] u) {
+    position[0] = x[0];
+    position[1] = x[1];
+    directionSet(u);
+  }
+  void display() {
+    stroke(col);
+    line(position[0], position[1], position[0]+direction[0], position[1]+direction[1]);
+  }
+  void directionSet(float[] u) {
+    direction[0] = u[0]*scale;
+    direction[1] = u[1]*scale;
+  }
+  void scaleSet(float s) {
+    scale = s;
+  }
+  void colorSet(color c) {
+    col = c;
+  }
+}
+
