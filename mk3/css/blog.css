@@ -20,6 +20,7 @@
 
 .article img{
   width: 90%;
+  max-width: 480px;
   padding: 5%;
 }
 
@@ -54,7 +55,7 @@
 
 /*adjust the position of anchors*/
 #cv{
-  padding-top:50px;
+  padding-top: 50px;
   margin-top:-50px;
 }
 
