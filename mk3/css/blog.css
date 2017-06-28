@@ -18,6 +18,11 @@
   color: #a5a5e4;
 }
 
+.article img{
+  width: 90%;
+  padding: 5%;
+}
+
 .title{
   width:100%;
   height:2.5em;
