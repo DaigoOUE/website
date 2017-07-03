@@ -41,7 +41,4 @@ void draw() {
     endShape(CLOSE);
   }
   t += 4;
-  if (t < 360) {
-    saveFrame("img/####.tiff");
-  }
 }
