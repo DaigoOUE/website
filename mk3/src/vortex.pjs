@@ -7,6 +7,7 @@ int t = 0;
 
 void setup() {
   size(window.innerWidth, window.innerHeight);
+  frameRate(10);
   origin[0] = width/2;
   origin[1] = height/2;
   colorMode(HSB);

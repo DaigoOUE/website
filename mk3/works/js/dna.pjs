@@ -1,0 +1,59 @@
+int num = 200;
+float[] p = new float[3];
+float r;
+int t = 0;
+int[] c = new int[num];
+
+void setup() {
+  size(window.innerWidth, window.innerHeight, P3D);
+  colorMode(HSB);
+  smooth();
+  strokeWeight(2);
+  for (int i = 0; i < num; ++i) {
+    c[i] = (int)random(-0.49, 3.49);
+  }
+}
+
+void draw() {
+  background(0);
+  translate(-width/10, height/2, 0);
+  rotateX(radians(t));
+
+  r = width/20;
+  
+  beginShape();
+  for (int i = 0; i < num; ++i) {
+    p[1] = r*cos(10*TWO_PI*i/num);
+    p[2] = r*sin(10*TWO_PI*i/num);
+    p[0] = (width+2*width/10)*i/num;
+
+    stroke(255/4*c[i], 255, 255);
+    noFill();
+    vertex(p[0], p[1], p[2]);
+  }
+  endShape(LINE);
+
+  beginShape();
+  for (int i = 0; i < num; ++i) {
+    p[1] = r*cos(10*TWO_PI*i/num+PI);
+    p[2] = r*sin(10*TWO_PI*i/num+PI);
+    p[0] = (width+2*width/10)*i/num;
+
+    stroke((255/4*c[i]+127.5)%255, 255, 255);
+    noFill();
+    vertex(p[0], p[1], p[2]);
+  }
+  endShape(LINE);
+
+  for (int i = 0; i < num; ++i) {
+    noFill();
+    beginShape(LINES);
+    stroke(255/4*c[i], 255, 255);
+    vertex((width+2*width/10)*i/num, r*cos(10*TWO_PI*i/num), r*sin(10*TWO_PI*i/num));
+    stroke((255/4*c[i]+127.5)%255, 255, 255, 50);
+    vertex((width+2*width/10)*i/num, r*cos(10*TWO_PI*i/num+PI), r*sin(10*TWO_PI*i/num+PI));
+    endShape();
+  }
+
+  ++t;
+}
