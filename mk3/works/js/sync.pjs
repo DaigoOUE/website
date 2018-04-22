@@ -1,0 +1,69 @@
+class Oscillator {
+  PVector position;
+  float frequency;
+  float phi;
+  int number;
+  Oscillator(float x, float y, float f, float p, int n) {
+    position = new PVector(x, y);
+    frequency = f;
+    phi = p;
+    number = n;
+  }
+
+  float interact() {
+    float temp = 0;
+    for (int i = 0; i < osc.length; ++i) {
+      if (i != this.number) {
+        temp += sin(osc[i].phi - this.phi);
+      }
+    }
+    temp = K*temp/N;
+    return(temp);
+  }
+  void update() {
+    phi += interact();
+  }
+  void display() {
+    image(light, position.x, position.y, (window.innerHeight/10)*(2+cos(radians(frequency*t)+phi)), (window.innerHeight/10)*(2+cos(radians(frequency*t)+phi)));
+  }
+  void run() {
+    update();
+    display();
+  }
+}
+
+Oscillator[] osc = new Oscillator[50];
+float K, N;
+PImage light = createImage(50, 50, RGB);
+
+int t = 0;
+
+void setup() {
+  size(window.innerWidth, window.innerHeight);
+
+  for (int i = 0; i < osc.length; ++i) {
+    float temp = (random(6, 7)+random(6, 7)+random(6, 7)+random(6, 7))/4;
+    osc[i] = new Oscillator(random(0, width), random(0, height), temp, random(0, TWO_PI), i);
+  }
+  K = 0.04;
+  N = osc.length;
+
+  imageMode(CENTER);
+  light.loadPixels();
+  for (int i = 0; i < light.pixels.length; ++i) {
+    int x = i % light.width;
+    int y = (int) i / light.width;
+    float d = sqrt(pow(x-25, 2)+pow(y-25, 2));
+    light.pixels[i] = color(0, 255, 0, 500*exp(-d/2));
+  }
+  light.updatePixels();
+}
+
+void draw() {
+  background(0);
+  for (int i = 0; i < osc.length; ++i) {
+    osc[i].run();
+  }
+  ++t;
+ // saveFrame("img/###.tiff");
+}

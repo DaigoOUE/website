@@ -1,0 +1,51 @@
+int num = 60;
+int l;
+float d, sum;
+int N = (int)(window.innerWidth/100);
+PVector[] p = new PVector[N];
+PVector[] dp = new PVector[N];
+
+void setup() {
+  size(window.innerWidth, window.innerHeight, P2D);
+  colorMode(HSB);
+  textAlign(CENTER);
+  textSize(height/num);
+  smooth();
+  frameRate(20);
+  for (int i = 0; i < p.length; ++i) {
+    p[i] = new PVector(random(0, width), random(0, height));
+    dp[i] = new PVector(random(-10, 10), random(-10, 10));
+  }
+}
+
+void draw() {
+  background(0);
+  for (int i = 0; i < p.length; ++i) {
+    p[i].add(dp[i]);
+    if (p[i].x < 0 || p[i].x > width) {
+      p[i].sub(dp[i]);
+      dp[i].set(-dp[i].x, dp[i].y);
+    }
+    if (p[i].y < 0 || p[i].y > height) {
+      p[i].sub(dp[i]);
+      dp[i].set(dp[i].x, -dp[i].y);
+    }
+  }
+  for (int i = 0; i < num*1.5; ++i) {
+    for (int j = 0; j < num*1.5; ++j) {
+      sum = 0;
+      for (int k = 0; k < p.length; ++k) {
+        d = sqrt(pow(i*width/num-p[k].x, 2) + pow(height/num*j-p[k].y, 2));
+        sum += 255*exp(-d/50);
+      }
+
+      l = (int)random(-0.5, 9.49);
+      if (sum > window.innerHeight/10) {
+        fill(map(l, 0, 9, 0, 255), 255, 255, 255);
+      } else {
+        fill(0, 0, 0, 0);
+      }
+      text(l, width/num*i, height/num*j);
+    }
+  }
+}
