@@ -1,0 +1,83 @@
+class Sphere {
+  PVector[] r;
+  color[] c;
+  float h;
+  float radius;
+  Sphere(float rad, float cc, int points) {
+    radius = rad;
+    h = cc;
+    r = new PVector[points];
+    c = new color[points];
+    init();
+  }
+
+  void init() {
+    float t, p;
+    for (int i = 0; i < r.length; ++i) {
+      t = random(-1,1);;
+      p = radians(random(0, 359));
+      //float temp = (random(-70, 70)+random(-70, 70)+random(-70, 70)+random(-70, 70))/4;
+      r[i] = new PVector(radius*cos(p)*sqrt(1-pow(t,2)), radius*sin(p)*sqrt(1-pow(t,2)), radius*t);
+      //c[i] = color((255+cc+temp)%255, 255, 255);
+      c[i] = color(h, random(0, 255), 255);
+    }
+  }
+
+  void display() {
+    float d;
+    noFill();
+    for (int i = 0; i < r.length; ++i) {
+      for (int j = 0; j < r.length; ++j) {
+        d = PVector.dist(r[i], r[j]);
+        if (exp(-d/(radius/10)) > 0.1) {
+          strokeWeight(2*exp(-d/20));
+          beginShape(LINES);
+          stroke(c[i], 255*exp(-d/(radius/5)));
+          vertex(r[i].x, r[i].y, r[i].z);
+          stroke(c[j], 255*exp(-d/(radius/5)));
+          vertex(r[j].x, r[j].y, r[j].z);
+          endShape();
+        }
+      }
+    }
+  }
+}
+
+
+Sphere s1, s2, s3;
+int i = 0;
+
+void setup() {
+  size(window.innerWidth, window.innerHeight, P3D);
+  colorMode(HSB);
+  smooth();
+  //noLoop();
+  s1 = new Sphere(0.3*min(width,height), 170, 300);
+  s2 = new Sphere(0.2*min(width,height), 170, 300);
+  //s3 = new Sphere(200, 0, 600);
+}
+
+void draw() {
+  background(0);
+  //initAll();
+  pushMatrix();
+  translate(width/2, height/2, 0);
+  rotateY(radians(i));
+  rotateX(radians(90));
+  s1.display();
+  s2.display();
+  //s3.display();
+  popMatrix();
+  //if (i < 30) {
+  //saveFrame("generative/"+String.valueOf(i+1)+"/core_shell_purple0"+String.valueOf(i+1));
+  ++i;
+  //} else {
+  //exit();
+  //}
+}
+
+void initAll() {
+  s1.init();
+  s2.init();
+}
+
