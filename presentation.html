@@ -1,0 +1,220 @@
+
+<!DOCTYPE HTML>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="大上能悟 (OUE Daigo)のポートフォリオです。Keynoteでかいた絵やProcessingで生成したアニメーション、写真などを公開しています。">
+    <meta name="keywords" content="oue,daigo,大上,能悟,Processing,p5,keynote,ポートフォリオ,portfolio">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/works.css">
+    <link rel="stylesheet" type="text/css" href="css/colorbox.css">
+    <title>Daigo OUE</title>
+    <script src="js/processing.min.js"></script>
+    <!--[if IE]><script src="js/excanvas.js" type="text/javascript" charset="utf-8"></script><![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="js/jquery.colorbox-min.js"></script>
+
+    <script>
+$(function() {
+  $(".iframe").colorbox({
+    iframe:true,
+    width:"80%",
+    height:"80%",
+    opacity: 0.7
+  });
+});
+    </script>
+
+
+    <script type="text/javascript">
+window.onload = function() {
+  document.getElementById('load').style.display = 'none';
+  document.getElementById('main').style.display = 'block';
+  document.getElementById('foot').style.display = 'block';
+}
+    </script>
+
+
+    <script>
+$(function(){
+  // #で始まるアンカーをクリックした場合に処理
+  $('a[href^=#]').click(function() {
+    // スクロールの速度
+    var speed = 400; // ミリ秒
+    // アンカーの値取得
+    var href= $(this).attr("href");
+    // 移動先を取得
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    // 移動先を数値で取得
+    var position = target.offset().top;
+    // スムーススクロール
+    $('body,html').animate({scrollTop:position}, speed, 'swing');
+    return false;
+  });
+});
+    </script>
+    
+    <script>
+//ページ間スムーススクロール
+$(function(){
+  var url = jQuery(location).attr('href');
+  if (url.indexOf("?id=") == -1) {
+    // スムーズスクロール以外の処理（必要なら）
+  }else{
+    // スムーズスクロールの処理
+    var url_sp = url.split("?id=");
+    var hash   = '#' + url_sp[url_sp.length - 1];
+    var tgt    = $(hash);
+    var pos    = tgt.offset().top - 50;
+    $("html, body").animate({scrollTop:pos}, 400, "swing");
+  }
+});
+    </script>
+   
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-72371836-1', 'auto');
+ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <p><a href="./index.html">DAIGO OUE</a></p>
+      </div>
+      <div class="menu">
+        <ul>
+          <a href="blog.html"><li class="last" id="blog">blog</li></a>
+          <a href="works.html"><li id="works">works</li></a>
+          <a href="index.html"><li id="home">home</li></a>
+        </ul>
+      </div>
+      <div class="hamburger hamburger--3dy" type="button">
+        <div class="hamburger-box">
+          <div class="hamburger-inner"></div>
+        </div>
+      </div>
+    </div>
+    <div class="navigation">
+      <ul>
+        <li><a href="./index.html">home</a></li>
+        <li><a href="./works.html">works</a></li>
+        <li><a href="./blog.html">blog</a></li>
+      </ul>
+    </div>
+
+    <div id="load" style="text-align:center">now loading...</div>
+
+    <div class="container" id="main">
+      <div class="mainContents">
+        <div class="title" id="presentation">
+          <h1 class="works">Presentation</h1>
+        </div>
+        <div class="title">
+          <h2 class="first">2019</h2>
+          <ol class="papers">
+            <li>
+              <u>D. Oue</u> & M. Matsuo “Electron spin transport driven by surface plasmon polariton,”  <br>
+              2019 JPS Autumn Meeting, <br>
+              Gifu University, Gifu / Japan <br>
+              (September 2019)
+            </li>
+            <li>
+              <u>D. Oue</u> “Optical Liouville-Neumann equation,” <br>
+              Nano-Material optical-manipulations open up novel phenomena, functions and technologies, <br>
+              Tokyo Institute of Technology, Ookayama Campus, <br>
+              Tokyo / Japan <br>
+              (March 2019)
+            </li>
+            <li>
+              <u>D. Oue</u> “Dielectric-loss-induced excess momentum and anomalous spin of light,”  <br>
+              Complex Light and Optica Forces XIII (Photonics West), <br>
+              The Moscone Center, <br>
+              San Francisco / United States <br>
+              (February 2019)
+            </li>
+          </ol>
+          <h2>2018</h2>
+          <ol>
+            <li>
+              D. Oue “Lifshitz Transition of Light near Dissipative Interfaces” <br>
+              A3 Metamaterials Forum, <br>
+              POSCO International Center, <br>
+              Pohang / Korea <br>
+              (August 2018)
+            </li>
+            <li>D. Oue “Complex-angle Analysis of Electromagnetic Waves on Interfaces,” <br>
+              EXCON2018, <br>
+              Todaiji Culture Center, <br>
+              Nara / Japan
+            </li>
+          </ol>
+          <h2>2017</h2>
+          <ol class="papers">
+            <li>
+              <u>D. Oue</u> “Evanescent-wave optical manipulation,” <br>
+              <u>Invited Lecture</u>, <br>
+              Max Planck Institute for the Science of Light,<br>
+              Erlangen / Germany <br>
+              (May 2017)
+            </li>
+            <li>
+              <u>D. Oue</u> & S. Kawata “Evanescent-wave driven rotation of plasmonic nano-propeller,” <br>
+              Recent progress in nano-material optical-manipulation, <br>
+              Pacifico Yokohama, <br>
+              Kanagawa / Japan <br>
+              (March 2017)
+            </li>
+            <li>
+              <u>D. Oue</u>, Y. Hasegawa, Y. Tsujimoto, R. Ikuta, T. Yamamoto & N. Imoto 
+              “Implementation of ’mobile’ polarization-entangled photon source,” <br>
+              OSA/SPIE Student Meeting, <br>
+              Photonics Center, <br>
+              Osaka / Japan <br>
+              (November 2016)
+            </li>
+          </ol>
+        </div>
+        <div class="title">
+          <span class="description">
+            *These works are partially supported via a crowdfunding scheme (<a href="https://academist-cf.com/projects/145?lang=ja" target="blank">academist</a>) by Uchiyama Tomoya, Sato Shunsuke, Ohashi Yoshiro, Ishibe Yuki, Takabe Tomosato, Shigeta Yuki, Yonezawa Takuo, and Suzuki Teppei. 
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer" id="foot">
+      <div class="copyright">©<span class="sign">DAIGO OUE</span>. All Rights Reserved.</div>
+      <div class="sns">
+        <ul>
+          <li class="last"><a href="https://www.instagram.com/ouedaigo/"><img src="./images/insta.png" width="20px" /></a></li>
+          <li><a href="https://www.facebook.com/oue.daigo"><img src="./images/facebook.png" width="20px" /></a></li>
+          <li><a href="https://twitter.com/q9ac"><img src="./images/twitter.png" width="20px" /></a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <script>
+var $hamburger = $(".hamburger");
+$hamburger.on("click", function(e) {
+  $hamburger.toggleClass("is-active");
+  // Do something else, like open/close menu
+});
+    </script>
+    <script>
+$('.hamburger').on("click", function() {
+  $('.navigation').slideToggle(150);
+});
+    </script>
+  </body>
+</html>
+
+
