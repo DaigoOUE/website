@@ -47,8 +47,7 @@
   margin-top:-50px;
   padding-top:50px;
   padding-right:40px;
-  color: rgba(176,176,176, 0.4);
-  text-shadow: 1px 4px 2px #272727, 0 0 0 #000, 1px 4px 2px #272727;
+  color: #aaa;
 }
 
 ::-moz-selection { background: #5af; color: #fff; text-shadow: none; }
@@ -68,15 +67,13 @@ h1.works{
 }
 
 .description a{
-  color: rgba(176,176,176, 0.4);
-  text-shadow: 1px 4px 2px #272727, 0 0 0 #000, 1px 4px 2px #272727;
+  color: #99c;
   text-decoration: underline;
 }
 
 
 ol.papers a{
-  color: rgba(176,176,176, 0.4);
-  text-shadow: 1px 4px 2px #272727, 0 0 0 #000, 1px 4px 2px #272727;
+  color: #aaa;
   text-decoration: none;
 }
 
